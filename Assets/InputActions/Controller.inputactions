@@ -2,7 +2,7 @@
     "name": "Controller",
     "maps": [
         {
-            "name": "Map",
+            "name": "AMcontrols",
             "id": "6e4037ce-3fdf-42c3-abb6-293150ca1bc5",
             "actions": [
                 {
@@ -52,7 +52,7 @@
                 },
                 {
                     "name": "SquareButton1",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "cf6f98d9-89f1-4473-87e1-b10f7eb3695d",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -64,7 +64,7 @@
                     "type": "Value",
                     "id": "471afc71-a897-4283-afb8-1bdeba2be295",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "Scale(factor=2)",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -73,7 +73,7 @@
                     "type": "Value",
                     "id": "3ef31d65-d560-4882-a985-cef1b7a39577",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "Scale(factor=3)",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -82,7 +82,7 @@
                     "type": "Value",
                     "id": "ea0d4a4b-7087-4dc8-94f1-8830e925b8e2",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "Scale(factor=4)",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -184,7 +184,7 @@
                     "id": "dd0eb146-9750-4d9e-85e5-382f6cebbaa4",
                     "path": "<Keyboard>/f",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale",
                     "groups": "",
                     "action": "SquareButton1",
                     "isComposite": false,
