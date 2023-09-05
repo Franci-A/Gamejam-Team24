@@ -473,9 +473,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnArray: []
   spawnWaitTime: 0
-  spawnWaitTimeMin: 2
-  spawnWaitTimeMax: 3
-  cultistPrefab: {fileID: 1014361920}
+  spawnWaitTimeMin: 0
+  spawnWaitTimeMax: 0
+  cultistPrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
