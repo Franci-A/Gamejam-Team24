@@ -254,6 +254,8 @@ MonoBehaviour:
   - {fileID: 557026721}
   _playerTransform: {fileID: 207235405}
   _movementSpeed: 5
+  lostCultist: {fileID: 11400000, guid: 98117135f03952644bd7d91fb068d492, type: 2}
+  joinedCultist: {fileID: 11400000, guid: 36e1201bdb8015940a73ef4ec310da34, type: 2}
 --- !u!4 &207235405
 Transform:
   m_ObjectHideFlags: 0
@@ -522,11 +524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.2000732
+      value: 2.1999512
       objectReference: {fileID: 0}
     - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.9741821
+      value: -0.9741211
       objectReference: {fileID: 0}
     - target: {fileID: 3929916910311151179, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchorMax.x
