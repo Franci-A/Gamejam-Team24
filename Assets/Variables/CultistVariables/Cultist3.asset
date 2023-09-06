@@ -15,7 +15,7 @@ MonoBehaviour:
   CultistName: 
   CultistPrize: 20
   SuspicionLevel: 0
-  CultistLevel: 0
+  CultistLevel: 1
   MinNumberOfSymbols: 1
-  MaxNumberOfSymbols: 1
+  MaxNumberOfSymbols: 5
   CultistTime: 10
