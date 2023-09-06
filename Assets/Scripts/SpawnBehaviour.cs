@@ -15,6 +15,8 @@ public class SpawnBehaviour : MonoBehaviour
     private Vector3 cultistPosition;
 
     private int randomNumberOfCultist;
+    private int randomNumberPosition;
+    [SerializeField] private float cultistDisplacementPosition;
 
     [SerializeField] private CultistController cultistPrefab;
     
@@ -35,10 +37,11 @@ public class SpawnBehaviour : MonoBehaviour
             Collider2D cultistColliders;
             do
             {
-                cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
+                randomNumberPosition = Random.Range(0, 4);
+                cultistPosition = spawnArray[randomNumberPosition].transform.position;
+                cultistPosition.x = cultistPosition.x + Random.Range(-cultistDisplacementPosition , cultistDisplacementPosition);
                 cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
             } while (cultistColliders != null);
-            
             CultistController cultise = Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity); 
             cultise.Init(Random.Range(0, cultise._CultistPresets.Count - 1));
         }
