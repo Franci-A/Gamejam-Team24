@@ -11,17 +11,23 @@ public class CultistController : MonoBehaviour
     private float timer = 0;
     private bool isInDialog = false;
     private int currentInput;
+    private int totalPrize;
     private int totalInputs;
-    private float value;
+    private float cultistValue;
+    private float suspicionValue;
+    private float cultistTimer;
 
     [SerializeField] private Image iconInstance;
     [SerializeField] private Sprite[] iconSprites;
     [SerializeField] private GameObjectEvent lostEvent;
 
-    public void Init(int numberOfInputs, float cultistValue)
+    public void Init(CultistsPreset cultistStats)
     {
-        totalInputs = numberOfInputs;
-        value = cultistValue;
+        totalPrize = cultistStats.CultistPrize;
+        totalInputs = cultistStats.NumberOfSymbols;
+        cultistValue = cultistStats.CultistLevel;
+        suspicionValue = cultistStats.SuspicionLevel;
+        cultistTimer = cultistStats.CultistTime;
     }
 
     void Update()
@@ -94,14 +100,14 @@ public class CultistController : MonoBehaviour
     public void FailedDialog()
     {
         Debug.Log("Failed");
-        lostEvent?.scriptableEvent.Invoke(value);
+        lostEvent?.scriptableEvent.Invoke(cultistValue);
         Destroy(this.gameObject);
     }
     
     public void LostCultist()
     {
         Debug.Log("Missed");
-        lostEvent?.scriptableEvent.Invoke(value);
+        lostEvent?.scriptableEvent.Invoke(cultistValue);
         Destroy(this.gameObject);
     }
 
