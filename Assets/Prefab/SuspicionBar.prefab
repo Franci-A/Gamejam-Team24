@@ -273,6 +273,7 @@ MonoBehaviour:
   lostCultist: {fileID: 11400000, guid: 98117135f03952644bd7d91fb068d492, type: 2}
   totalValue: 100
   slider: {fileID: 7460689861743605375}
+  values: {fileID: 11400000, guid: 93363732b3fa84e4fa84a8a3336539ae, type: 2}
 --- !u!1 &6703546424091533409
 GameObject:
   m_ObjectHideFlags: 0
