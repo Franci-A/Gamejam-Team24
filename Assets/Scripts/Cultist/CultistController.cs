@@ -84,13 +84,16 @@ public class CultistController : MonoBehaviour
         if(currentInput == input)
         {
             Debug.Log("Correct input");
+            
             totalInputs--;
             if (totalInputs <= 0)
             {
                 DialogFinished();
+                SoundManager.instance.PlayClip("WinAdept");
             }
             else 
-            { 
+            {
+                SoundManager.instance.PlayClip("GoodMotif");
                 GetSymbole();
             }
         }
@@ -111,6 +114,7 @@ public class CultistController : MonoBehaviour
     public void FailedDialog()
     {
         Debug.Log("Failed");
+        SoundManager.instance.PlayClip("FailAdept");
         isInDialog = false;
         lostEvent?.scriptableEvent.Invoke(cultistValue);
         Destroy(this.gameObject.GetComponent<Collider2D>());

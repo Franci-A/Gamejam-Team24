@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Awake()
     {
+        SoundManager.instance.PlayClip("CrowdTalk");
         _ControllerClass = new Controller();
         _Buttons = new Controls();
         #region Assign Inputs
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         _Buttons.m_Symbols = _ControllerClass.AMcontrols.Symbols;
         _Buttons.m_GoldButtons = _ControllerClass.AMcontrols.GoldButtons;
         _Buttons.m_AddCoinsButton = _ControllerClass.AMcontrols.AddCoinsButtons;
-        _Buttons.m_AddCoinsButton = _ControllerClass.AMcontrols.Joystick;
+        _Buttons.m_Joystick = _ControllerClass.AMcontrols.Joystick;
         #endregion
     }
 
@@ -82,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!(CollidedCultist != null && CollidedCultist.isInDialog))
         {
+            SoundManager.instance.PlayClip("FootSteps");
             if (DOTween.IsTweening(_playerTransform)) _playerTransform.DOKill();
             float i = context.ReadValue<float>();
             _playerTransform.DOMove(_movementSlotsTransform[(int)i - 1].position, 10 / _movementSpeed * (0.1f + (0.1f * Mathf.Abs(_lastPlayerIndex - i))));
@@ -105,6 +107,9 @@ public class PlayerMovement : MonoBehaviour
     private void Joystick(InputAction.CallbackContext context)
     {
         //Joystick
+        SoundManager.instance.PlayClip("Blood");
+        SoundManager.instance.PlayClip("Lever");
+        SoundManager.instance.PlayClip("Slash");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

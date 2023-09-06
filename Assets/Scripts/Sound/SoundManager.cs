@@ -1,50 +1,81 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Audio;
+using System;
 using UnityEngine;
+using System.Collections.Generic;
 
+/// <summary>
+/// Script managing every audio in the game
+/// </summary>
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource EffectsSource;
-    public AudioSource MusicSource;
+    public static SoundManager instance;
 
-    public float LowPitchRange = .95f;
-    public float HighPitchRange = 1.05f;
+    [Header("Main Mixer")]
+    [SerializeField] private AudioMixerGroup audioMixerGroup;
 
-    public static SoundManager Instance = null;
+    [Header("All the clips")]
+    [SerializeField] private Sounds[] sounds;
+
+    //Singleton initialization
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
+        if (instance != null)
         {
             Destroy(gameObject);
+            return;
         }
-
-        DontDestroyOnLoad(gameObject);
+        instance = this;
+        InitializeAllClips();
     }
 
-    public void Play(AudioClip clip)
+    /// <summary>
+    /// Create an audio source for each clip and set it with the right parameter
+    /// </summary>
+    void InitializeAllClips()
     {
-        EffectsSource.clip = clip;
-        EffectsSource.Play();
+        foreach (Sounds s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.pitch = s.pitch;
+            s.source.volume = s.volume;
+            s.source.outputAudioMixerGroup = audioMixerGroup;
+            s.source.loop = s.loop;
+        }
     }
 
-    public void PlayMusic(AudioClip clip)
+    /// <summary>
+    /// Play a clip
+    /// </summary>
+    /// <param name="name">The name of the clip</param>
+    public void PlayClip(string name)
     {
-        MusicSource.clip = clip;
-        MusicSource.Play();
+        if (name == "")
+        {
+            return;
+        }
+        Sounds s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("The clip " + name + " doesn't exist !");
+            return;
+        }
+        s.source.Play();
     }
+}
 
-    public void RandomSoundEffect(params AudioClip[] clips)
-    {
-        int randomIndex = Random.Range(0, clips.Length);
-        float randomPitch = Random.Range(LowPitchRange, HighPitchRange);
+[System.Serializable]
+public class Sounds
+{
+    public string name;
+    public AudioClip clip;
 
-        EffectsSource.pitch = randomPitch;
-        EffectsSource.clip = clips[randomIndex];
-        EffectsSource.Play();
-    }
+    [Range(0f, 1f)]
+    public float volume;
+    [Range(.1f, 3f)]
+    public float pitch;
+    public bool loop;
 
+    [HideInInspector]
+    public AudioSource source;
 }
