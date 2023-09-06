@@ -20,6 +20,7 @@ public class CultistController : MonoBehaviour
     [SerializeField] private Image iconInstance;
     [SerializeField] private Sprite[] iconSprites;
     [SerializeField] private GameObjectEvent lostEvent;
+    public List<CultistsPreset> _CultistPresets;
 
     public void Init(CultistsPreset cultistStats)
     {
@@ -87,6 +88,7 @@ public class CultistController : MonoBehaviour
             {
                 Debug.Log("All inputs done");
                 isInDialog = false;
+                iconInstance.gameObject.SetActive(false);
             }
             else { 
                 GetSymbole();
@@ -104,6 +106,7 @@ public class CultistController : MonoBehaviour
         isInDialog = false;
         lostEvent?.scriptableEvent.Invoke(cultistValue);
         Destroy(this.gameObject.GetComponent<Collider2D>());
+        iconInstance.gameObject.SetActive(false);
     }
     
     public void LostCultist()
@@ -120,4 +123,5 @@ public class CultistController : MonoBehaviour
             LostCultist();
         }
     }
+
 }

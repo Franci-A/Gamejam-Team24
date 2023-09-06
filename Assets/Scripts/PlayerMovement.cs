@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
     private void Symbols(InputAction.CallbackContext context)
     {
         if (CollidedCultist!=null)
-        CollidedCultist.WaitInput((int)context.ReadValue<float>());
+        CollidedCultist.WaitInput((int)context.ReadValue<float>()-1);
     }
     private void AddCoins(InputAction.CallbackContext context)
     {
@@ -113,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
             CollidedCultist = collision.gameObject.GetComponent<CultistController>();
             CollidedCultist.StartDialog();
+            _playerTransform.DOKill();
         }
     }
 

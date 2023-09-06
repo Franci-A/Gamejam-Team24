@@ -253,7 +253,7 @@ MonoBehaviour:
   - {fileID: 163113639}
   - {fileID: 557026721}
   _playerTransform: {fileID: 207235405}
-  CollidedCultist: {fileID: 0}
+  _movementSpeed: 5
 --- !u!4 &207235405
 Transform:
   m_ObjectHideFlags: 0
