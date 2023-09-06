@@ -6,7 +6,7 @@
             "id": "6e4037ce-3fdf-42c3-abb6-293150ca1bc5",
             "actions": [
                 {
-                    "name": "GoldenButtonLeft",
+                    "name": "GoldButtons",
                     "type": "Button",
                     "id": "bf8375c9-d843-4d87-aaca-e873b7c23ed7",
                     "expectedControlType": "Button",
@@ -30,30 +30,12 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
-                    "name": "InsertCoin1",
+                    "name": "AddCoinsButtons",
                     "type": "Button",
                     "id": "b1741229-fd88-43e8-b3ff-018badd06b0b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "InsertCoin2",
-                    "type": "Button",
-                    "id": "a7528e2b-b724-4e7e-8b09-71b5bd113168",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RightGoldenButton",
-                    "type": "Button",
-                    "id": "27dc8f65-a13c-467e-a3ca-2fc55bfabdbf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -77,7 +59,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "GoldenButtonLeft",
+                    "action": "GoldButtons",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7715cc4-aa71-4719-9299-f2d282745229",
+                    "path": "<Keyboard>/semicolon",
+                    "interactions": "",
+                    "processors": "Scale(factor=2)",
+                    "groups": "",
+                    "action": "GoldButtons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -176,29 +169,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "InsertCoin1",
+                    "action": "AddCoinsButtons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "18cde29c-23f4-4ab4-ba1c-82af77ec5085",
+                    "id": "882caaa1-f8e9-433d-adbc-b9cf7a49ee0b",
                     "path": "<Keyboard>/l",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=2)",
                     "groups": "",
-                    "action": "InsertCoin2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e453cb2b-fd33-4371-8319-b1c9c4c3f481",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightGoldenButton",
+                    "action": "AddCoinsButtons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
