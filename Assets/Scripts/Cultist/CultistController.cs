@@ -9,7 +9,7 @@ public class CultistController : MonoBehaviour
     [SerializeField] private Vector3 direction = new Vector3(0, 0 , -1);
     [SerializeField] private float talkTime = 3;
     private float timer = 0;
-    private bool isInDialog = false;
+    public bool isInDialog = false;
     private int currentInput;
     private int totalInputs;
     private float value;
@@ -80,6 +80,7 @@ public class CultistController : MonoBehaviour
             if (totalInputs <= 0)
             {
                 Debug.Log("All inputs done");
+                isInDialog = false;
             }
             else { 
                 GetSymbole();
@@ -95,7 +96,8 @@ public class CultistController : MonoBehaviour
     {
         Debug.Log("Failed");
         lostEvent?.scriptableEvent.Invoke(value);
-        Destroy(this.gameObject);
+        isInDialog = false;
+        Destroy(this.gameObject.GetComponent<Collider2D>());
     }
     
     public void LostCultist()

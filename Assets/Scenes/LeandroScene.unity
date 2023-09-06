@@ -210,6 +210,7 @@ MonoBehaviour:
   - {fileID: 1702109743}
   - {fileID: 1971021714}
   _playerTransform: {fileID: 1328621257}
+  _movementSpeed: 1
 --- !u!1 &729312678
 GameObject:
   m_ObjectHideFlags: 0

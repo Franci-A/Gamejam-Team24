@@ -11,9 +11,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Transform[] _movementSlotsTransform;
     [SerializeField] Transform _playerTransform;
+    [SerializeField] float _movementSpeed;
     private Controller _ControllerClass;
     private Controls _Buttons;
-    public CultistController CollidedCultist;
+    private CultistController CollidedCultist;
+    private int _lastPlayerIndex  = 0;
 
     class Controls
     {
@@ -78,8 +80,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void SquareButtons(InputAction.CallbackContext context)
     {
-        float i = context.ReadValue<float>();
-        _playerTransform.DOMove(_movementSlotsTransform[(int)i - 1].position,0.1f);
+        if (!(CollidedCultist != null && CollidedCultist.isInDialog))
+        {
+            if (DOTween.IsTweening(_playerTransform)) _playerTransform.DOKill();
+            float i = context.ReadValue<float>();
+            _playerTransform.DOMove(_movementSlotsTransform[(int)i - 1].position, 10 / _movementSpeed * (0.1f + (0.1f * Mathf.Abs(_lastPlayerIndex - i))));
+            _lastPlayerIndex = (int)i;
+        }
+
     }
     private void Symbols(InputAction.CallbackContext context)
     {
