@@ -8,7 +8,7 @@ public class CultistsPreset : ScriptableObject
 {
     public string CultistName;
 
-    public int CultistPrizz;
+    public int CultistPrize;
 
     public float SuspicionLevel;
 
