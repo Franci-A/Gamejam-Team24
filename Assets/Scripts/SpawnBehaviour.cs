@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpawnBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnArray;
-    public float spawnWaitTime;
-    public float spawnWaitTimeMin;
-    public float spawnWaitTimeMax;
+    private float spawnWaitTime;
+    [SerializeField] private float spawnWaitTimeMin;
+    [SerializeField] private float spawnWaitTimeMax;
 
     [SerializeField] private float circleRadius;
 
@@ -16,22 +16,11 @@ public class SpawnBehaviour : MonoBehaviour
 
     private int randomNumberOfCultist;
 
-    public CultistController cultistPrefab;
+    [SerializeField] private CultistController cultistPrefab;
     
 
-    /*List<List<GameObject>> cultistList = new List<List<GameObject>>();*/
-
-    // Start is called before the first frame update
     void Start()
     {
-        /*
-        //Setup List Of List for stocking GameObject in column
-        cultistList = new List<List<GameObject>>();
-        for (int listNumber = 0; listNumber < 4; listNumber++)
-        {
-            cultistList.Add(new List<GameObject>());
-        }
-        */
 
         Debug.Log(spawnArray);
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
@@ -41,28 +30,16 @@ public class SpawnBehaviour : MonoBehaviour
     {
         randomNumberOfCultist = Random.Range(0, 4);
         
-        /*
-        for (int countCultistList = 0; countCultistList < 4; countCultistList++)
-        {
-            foreach(var valueOfItems in cultistList[countCultistList])
-            {
-                Debug.Log(countCultistList,valueOfItems);
-                Debug.Log("==========================");
-            }
-        }
-        */
         for(var counterOfSpawningCultist = 0; counterOfSpawningCultist< randomNumberOfCultist; counterOfSpawningCultist++)
         {
-            cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
-
-            var cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
-
-            while(cultistColliders != null)
+            Collider2D cultistColliders;
+            do
             {
                 cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
                 cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
-            }
-            CultistController cultise = Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity); //.Init(1, 10);  number of inputs and cultist value to add
+            } while (cultistColliders != null);
+            
+            CultistController cultise = Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity); 
             cultise.Init(cultise._CultistPresets[Random.Range(0, cultise._CultistPresets.Count - 1)]);
         }
         spawnWaitTime = Random.Range(spawnWaitTimeMin, spawnWaitTimeMax);
@@ -73,7 +50,6 @@ public class SpawnBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnWaitTime);
         CultistSpawn();
-
     }
 
     private void OnDrawGizmos()
