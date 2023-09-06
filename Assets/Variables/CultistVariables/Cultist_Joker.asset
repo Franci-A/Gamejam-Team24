@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Cultist_Joker
   m_EditorClassIdentifier: 
   CultistName: 
-  CultistPrize: 20
+  CultistPrize: 100
   SuspicionLevel: 0
-  CultistLevel: 1
+  CultistLevel: 5
   MinNumberOfSymbols: 1
   MaxNumberOfSymbols: 3
   CultistTime: 10
