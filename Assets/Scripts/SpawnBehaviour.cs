@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class SpawnBehaviour : MonoBehaviour
 {
-    public Transform[] spawnArray;
+    [SerializeField] private Transform[] spawnArray;
     public float spawnWaitTime;
     public float spawnWaitTimeMin;
     public float spawnWaitTimeMax;
 
-    private int randomValuePosition;
-    private int randomValueNumberOfCultist;
+    private int randomNumberOfCultist;
 
     public GameObject cultistPrefab;
 
-    List<List<GameObject>> cultistList = new List<List<GameObject>>();
+    /*List<List<GameObject>> cultistList = new List<List<GameObject>>();*/
 
     // Start is called before the first frame update
     void Start()
     {
+        /*
         //Setup List Of List for stocking GameObject in column
         cultistList = new List<List<GameObject>>();
         for (int listNumber = 0; listNumber < 4; listNumber++)
         {
             cultistList.Add(new List<GameObject>());
         }
+        */
 
-        spawnArray = GetComponentsInChildren<Transform>();
         Debug.Log(spawnArray);
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
     }
@@ -39,8 +39,9 @@ public class SpawnBehaviour : MonoBehaviour
 
     public void CultistSpawn()
     {
-        randomValueNumberOfCultist = Random.Range(1, 5);
+        randomNumberOfCultist = Random.Range(0, 4);
         
+        /*
         for (int countCultistList = 0; countCultistList < 4; countCultistList++)
         {
             foreach(var valueOfItems in cultistList[countCultistList])
@@ -48,13 +49,12 @@ public class SpawnBehaviour : MonoBehaviour
                 Debug.Log(countCultistList,valueOfItems);
                 Debug.Log("==========================");
             }
-            
         }
-        for(var counterOfSpawningCultist = 0; counterOfSpawningCultist< randomValueNumberOfCultist; counterOfSpawningCultist++)
+        */
+        for(var counterOfSpawningCultist = 0; counterOfSpawningCultist< randomNumberOfCultist; counterOfSpawningCultist++)
         {
-            randomValuePosition = Random.Range(1, 5);
-            var cultistPosition = spawnArray[randomValuePosition].transform.position;
-            cultistList[randomValuePosition - 1].Add(Instantiate(cultistPrefab, cultistPosition, Quaternion.identity) as GameObject);
+            var cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
+            Instantiate(cultistPrefab, cultistPosition, Quaternion.identity);
         }
         spawnWaitTime = Random.Range(spawnWaitTimeMin, spawnWaitTimeMax);
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
@@ -64,5 +64,11 @@ public class SpawnBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnWaitTime);
         CultistSpawn();
+
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }
