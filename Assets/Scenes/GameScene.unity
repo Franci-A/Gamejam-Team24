@@ -305,8 +305,8 @@ MonoBehaviour:
   spawnArray:
   - {fileID: 953154191}
   - {fileID: 1995039678}
-  spawnWaitTimeMin: 1
-  spawnWaitTimeMax: 2
+  spawnWaitTimeMin: 2
+  spawnWaitTimeMax: 5
   circleRadius: 0.5
   cultistMask:
     serializedVersion: 2
