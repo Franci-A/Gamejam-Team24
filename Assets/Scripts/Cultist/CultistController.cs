@@ -26,7 +26,7 @@ public class CultistController : MonoBehaviour
     public void Init(CultistsPreset cultistStats)
     {
         totalPrize = cultistStats.CultistPrize;
-        totalInputs = cultistStats.NumberOfSymbols;
+        totalInputs = Random.Range(cultistStats.MinNumberOfSymbols, cultistStats.MaxNumberOfSymbols);
         cultistValue = cultistStats.CultistLevel;
         suspicionValue = cultistStats.SuspicionLevel;
         cultistTimer = cultistStats.CultistTime;

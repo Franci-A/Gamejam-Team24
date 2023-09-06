@@ -14,7 +14,9 @@ public class CultistsPreset : ScriptableObject
 
     public float CultistLevel;
 
-    public int NumberOfSymbols;
+    public int MinNumberOfSymbols;
+
+    public int MaxNumberOfSymbols;
 
     public float CultistTime;
 }
