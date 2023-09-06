@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private CultistController CollidedCultist;
     private int _lastPlayerIndex  = 0;
 
+    [SerializeField] private GameObjectEvent sacrificeEvent;
+
     class Controls
     {
         #region InputActions
@@ -104,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Joystick(InputAction.CallbackContext context)
     {
-        //Joystick
+        sacrificeEvent?.scriptableEvent.Invoke(null);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
