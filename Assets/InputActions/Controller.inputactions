@@ -2,7 +2,7 @@
     "name": "Controller",
     "maps": [
         {
-            "name": "Map",
+            "name": "AMcontrols",
             "id": "6e4037ce-3fdf-42c3-abb6-293150ca1bc5",
             "actions": [
                 {
@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Spades",
+                    "name": "Symbols",
                     "type": "Button",
                     "id": "f722655f-8a49-4377-b803-ef3ece2c4dcb",
                     "expectedControlType": "Button",
@@ -24,63 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Heart",
+                    "name": "SquareButtons",
                     "type": "Button",
-                    "id": "8154de2a-ec24-4146-bde3-575e2a271513",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Diamond",
-                    "type": "Button",
-                    "id": "2303c35a-0c82-4ecd-bcdc-78c6c4bc2694",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Clover",
-                    "type": "Button",
-                    "id": "f91ec917-fcf1-4804-af0f-e47bba683dc1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SquareButton1",
-                    "type": "Value",
                     "id": "cf6f98d9-89f1-4473-87e1-b10f7eb3695d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "SquareButton2",
-                    "type": "Value",
-                    "id": "471afc71-a897-4283-afb8-1bdeba2be295",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "SquareButton3",
-                    "type": "Value",
-                    "id": "3ef31d65-d560-4882-a985-cef1b7a39577",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "SquareButton4",
-                    "type": "Value",
-                    "id": "ea0d4a4b-7087-4dc8-94f1-8830e925b8e2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -142,40 +88,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Spades",
+                    "action": "Symbols",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "81b107d8-85c2-4ba4-a292-c01c804d3b10",
+                    "id": "83c156dc-ea09-4911-86d1-cca317e88345",
                     "path": "<Keyboard>/d",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=2)",
                     "groups": "",
-                    "action": "Heart",
+                    "action": "Symbols",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1429a069-70d9-4e7e-bfc1-ac2651afc335",
+                    "id": "35b6f848-56f3-423c-8a82-7d8664832cee",
                     "path": "<Keyboard>/x",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=3)",
                     "groups": "",
-                    "action": "Diamond",
+                    "action": "Symbols",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3fa48fff-2563-4562-b1cb-703a65970e41",
+                    "id": "31413e1f-6c4e-4834-9975-9604eb156d1b",
                     "path": "<Keyboard>/c",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=4)",
                     "groups": "",
-                    "action": "Clover",
+                    "action": "Symbols",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -186,40 +132,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SquareButton1",
+                    "action": "SquareButtons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1b34c77c-20c7-4e74-90d2-ebe1a2b617f4",
+                    "id": "8c5d2550-50c4-4d41-94cb-f0559d47f312",
                     "path": "<Keyboard>/g",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=2)",
                     "groups": "",
-                    "action": "SquareButton2",
+                    "action": "SquareButtons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "871ff329-7437-4f5b-9168-54ea6994206c",
+                    "id": "36192c38-cf1f-48ab-a68e-fc2294ecb528",
                     "path": "<Keyboard>/h",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=3)",
                     "groups": "",
-                    "action": "SquareButton3",
+                    "action": "SquareButtons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "f000a2fe-214c-4043-b520-2c1ea34bf5ab",
+                    "id": "40ed0f33-ab29-4dc4-8bfa-f206eeaa922d",
                     "path": "<Keyboard>/j",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=4)",
                     "groups": "",
-                    "action": "SquareButton4",
+                    "action": "SquareButtons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
