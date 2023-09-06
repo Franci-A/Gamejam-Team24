@@ -40,7 +40,7 @@ public class SpawnBehaviour : MonoBehaviour
             } while (cultistColliders != null);
             
             CultistController cultise = Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity); 
-            cultise.Init(cultise._CultistPresets[Random.Range(0, cultise._CultistPresets.Count - 1)]);
+            cultise.Init(Random.Range(0, cultise._CultistPresets.Count - 1));
         }
         spawnWaitTime = Random.Range(spawnWaitTimeMin, spawnWaitTimeMax);
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
