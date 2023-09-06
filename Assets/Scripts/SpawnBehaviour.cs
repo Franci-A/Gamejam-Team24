@@ -16,7 +16,7 @@ public class SpawnBehaviour : MonoBehaviour
 
     private int randomNumberOfCultist;
 
-    public GameObject cultistPrefab;
+    public CultistController cultistPrefab;
 
     /*List<List<GameObject>> cultistList = new List<List<GameObject>>();*/
 
@@ -67,7 +67,7 @@ public class SpawnBehaviour : MonoBehaviour
                 cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
                 cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
             }
-            Instantiate(cultistPrefab, cultistPosition, Quaternion.identity);
+            Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity).Init(1, 10); // number of inputs and cultist value to add
         }
         spawnWaitTime = Random.Range(spawnWaitTimeMin, spawnWaitTimeMax);
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
