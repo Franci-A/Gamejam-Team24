@@ -277,9 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5160c1c50998a74b8d1df4a334374ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
+  baseSpeed: 2
   direction: {x: 0, y: -1, z: 0}
-  talkTime: 1
   isInDialog: 0
   iconInstance: {fileID: 8568934356106054873}
   iconSprites:
@@ -289,12 +288,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ae13e0d8b648b454d8a40761bfabfe5d, type: 3}
   lostEvent: {fileID: 11400000, guid: 98117135f03952644bd7d91fb068d492, type: 2}
   joinedEvent: {fileID: 11400000, guid: 36e1201bdb8015940a73ef4ec310da34, type: 2}
+  scoreEvent: {fileID: 11400000, guid: c76b2b85e81b23b459c50a4a980d0067, type: 2}
   _CultistPresets:
   - {fileID: 11400000, guid: 76cd4cd63965960499339393b6ee5a19, type: 2}
   - {fileID: 11400000, guid: 7220bb1b4ca1e3a4aa41b18d2015a2b3, type: 2}
   - {fileID: 11400000, guid: e619981b9b5096b468e715f0112709c9, type: 2}
   - {fileID: 11400000, guid: 9d2c9dcdb70ed5d418add0f65408b85b, type: 2}
   - {fileID: 11400000, guid: a7fae156c573dc84bb217784f1856e93, type: 2}
+  player: {fileID: 0}
 --- !u!61 &1984998757542417221
 BoxCollider2D:
   m_ObjectHideFlags: 0

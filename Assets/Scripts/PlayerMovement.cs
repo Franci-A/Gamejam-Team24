@@ -17,6 +17,15 @@ public class PlayerMovement : MonoBehaviour
     private CultistController CollidedCultist;
     private int _lastPlayerIndex  = 0;
 
+    [SerializeField] private GameObjectEvent lostCultist;
+    [SerializeField] private GameObjectEvent joinedCultist;
+
+    private void Start()
+    {
+        lostCultist.scriptableEvent.AddListener(OnReleaseCultist);
+        joinedCultist.scriptableEvent.AddListener(OnReleaseCultist);
+    }
+
     class Controls
     {
         #region InputActions
@@ -91,8 +100,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Symbols(InputAction.CallbackContext context)
     {
-        if (CollidedCultist!=null)
-        CollidedCultist.WaitInput((int)context.ReadValue<float>()-1);
+        if (CollidedCultist == null)
+            return;
+        CollidedCultist.CorrectInput((int)context.ReadValue<float>() - 1);
+
     }
     private void AddCoins(InputAction.CallbackContext context)
     {
@@ -110,12 +121,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Ennemy"))
         {
-
-            CollidedCultist = collision.gameObject.GetComponent<CultistController>();
-            CollidedCultist.StartDialog();
-            _playerTransform.DOKill();
+            if (CollidedCultist == null)
+            {
+                CollidedCultist = collision.gameObject.GetComponent<CultistController>();
+                CollidedCultist.StartDialog();
+                _playerTransform.DOKill();
+            }
         }
     }
 
+    public void OnReleaseCultist(object obj)
+    {
+        CollidedCultist = null;
+    }
 
+    private void OnDestroy()
+    {
+        lostCultist.scriptableEvent.RemoveListener(OnReleaseCultist);
+        joinedCultist.scriptableEvent.RemoveListener(OnReleaseCultist);
+    }
 }

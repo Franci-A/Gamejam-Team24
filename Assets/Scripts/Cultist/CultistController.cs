@@ -7,11 +7,11 @@ public class CultistController : MonoBehaviour
 {
     [SerializeField] private float baseSpeed = 1;
     [SerializeField] private Vector3 direction = new Vector3(0, 0 , -1);
-    [SerializeField] private float talkTime = 3;
     private float timer = 0;
     public bool isInDialog = false;
     private int currentInput;
-    private int totalPrize;
+
+    private float totalPrize;
     private int totalInputs;
     private float cultistValue;
     private float suspicionValue;
@@ -21,19 +21,29 @@ public class CultistController : MonoBehaviour
     [SerializeField] private Sprite[] iconSprites;
     [SerializeField] private GameObjectEvent lostEvent;
     [SerializeField] private GameObjectEvent joinedEvent;
+    [SerializeField] private GameObjectEvent scoreEvent;
     public List<CultistsPreset> _CultistPresets;
 
-    public void Init(CultistsPreset cultistStats)
+    private bool isActive = false;
+
+    public PlayerMovement player;
+
+    public void Init(int randomCultist)
     {
-        totalPrize = cultistStats.CultistPrize;
-        totalInputs = Random.Range(cultistStats.MinNumberOfSymbols, cultistStats.MaxNumberOfSymbols);
-        cultistValue = cultistStats.CultistLevel;
-        suspicionValue = cultistStats.SuspicionLevel;
-        cultistTimer = cultistStats.CultistTime;
+        totalPrize = _CultistPresets[randomCultist].CultistPrize;
+        totalInputs = Random.Range(_CultistPresets[randomCultist].MinNumberOfSymbols, _CultistPresets[randomCultist].MaxNumberOfSymbols);
+        cultistValue = _CultistPresets[randomCultist].CultistLevel;
+        suspicionValue = _CultistPresets[randomCultist].SuspicionLevel;
+        cultistTimer = _CultistPresets[randomCultist].CultistTime;
+        timer = cultistTimer;
+        isActive = true;
     }
 
     void Update()
     {
+        if (!isActive)
+            return;
+
         if (!isInDialog)
         {
             transform.position += direction * baseSpeed * Time.deltaTime;
@@ -51,7 +61,7 @@ public class CultistController : MonoBehaviour
     public void StartDialog()
     {
         isInDialog = true;
-        timer = talkTime;
+        timer = cultistTimer;
         GetSymbole();
     }
 
@@ -60,26 +70,27 @@ public class CultistController : MonoBehaviour
         int symbol = Random.Range(0, 4);
         iconInstance.sprite = iconSprites[symbol];
         iconInstance.gameObject.SetActive(true);
+        currentInput = symbol;
         switch (symbol)
         {
             case 0:
-                Debug.Log("Spade");
+                Debug.Log("Spade + 1");
                 break;
             case 1:
-                Debug.Log("Heart");
+                Debug.Log("Heart + 2");
                 break;
             case 2:
-                Debug.Log("Diamond");
+                Debug.Log("Diamond + 3");
                 break;
             case 3:
-                Debug.Log("Club");
+                Debug.Log("Club + 4");
                 break;
             default:
                 break;
         }
     }
 
-    public void WaitInput(int input)
+    public bool CorrectInput(int input)
     {
         if(currentInput == input)
         {
@@ -88,15 +99,18 @@ public class CultistController : MonoBehaviour
             if (totalInputs <= 0)
             {
                 DialogFinished();
+                return false;
             }
             else 
             { 
                 GetSymbole();
+                return true;
             }
         }
         else
         {
             FailedDialog();
+            return false;
         }
     }
 
@@ -105,7 +119,8 @@ public class CultistController : MonoBehaviour
         Debug.Log("All inputs done");
         isInDialog = false;
         iconInstance.gameObject.SetActive(false);
-        joinedEvent?.scriptableEvent.Invoke(totalPrize);
+        joinedEvent?.scriptableEvent.Invoke(cultistValue);
+        scoreEvent.scriptableEvent.Invoke(totalPrize);
     }
 
     public void FailedDialog()
@@ -116,18 +131,12 @@ public class CultistController : MonoBehaviour
         Destroy(this.gameObject.GetComponent<Collider2D>());
         iconInstance.gameObject.SetActive(false);
     }
-    
-    public void MissedCultist()
-    {
-        Debug.Log("Missed");
-        Destroy(this.gameObject);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("EndZone"))
         {
-            MissedCultist();
+            Destroy(this.gameObject);
         }
     }
 

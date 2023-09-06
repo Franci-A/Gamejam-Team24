@@ -31,7 +31,8 @@ public class CultistBar : MonoBehaviour
 
     public void AddCultist(object obj)
     {
-        currentValue += (float)obj;
+        float value = (float)obj;
+        currentValue += value;
         UpdateSlider();
     }
 
@@ -44,7 +45,7 @@ public class CultistBar : MonoBehaviour
             if(percentage >= scores[i].percentageNeeded)
             {
                 scoreMultiplier.SetValue(scores[i].multiplierGiven);
-                break;
+                return;
             }
         }
         scoreMultiplier.SetValue(1);
