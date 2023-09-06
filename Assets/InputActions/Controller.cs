@@ -37,7 +37,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Spades"",
+                    ""name"": ""Symbols"",
                     ""type"": ""Button"",
                     ""id"": ""f722655f-8a49-4377-b803-ef3ece2c4dcb"",
                     ""expectedControlType"": ""Button"",
@@ -46,65 +46,11 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Heart"",
-                    ""type"": ""Button"",
-                    ""id"": ""8154de2a-ec24-4146-bde3-575e2a271513"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Diamond"",
-                    ""type"": ""Button"",
-                    ""id"": ""2303c35a-0c82-4ecd-bcdc-78c6c4bc2694"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Clover"",
-                    ""type"": ""Button"",
-                    ""id"": ""f91ec917-fcf1-4804-af0f-e47bba683dc1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SquareButton1"",
+                    ""name"": ""SquareButtons"",
                     ""type"": ""Button"",
                     ""id"": ""cf6f98d9-89f1-4473-87e1-b10f7eb3695d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""SquareButton2"",
-                    ""type"": ""Value"",
-                    ""id"": ""471afc71-a897-4283-afb8-1bdeba2be295"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": ""Scale(factor=2)"",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""SquareButton3"",
-                    ""type"": ""Value"",
-                    ""id"": ""3ef31d65-d560-4882-a985-cef1b7a39577"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": ""Scale(factor=3)"",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""SquareButton4"",
-                    ""type"": ""Value"",
-                    ""id"": ""ea0d4a4b-7087-4dc8-94f1-8830e925b8e2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": ""Scale(factor=4)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
@@ -164,40 +110,40 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Spades"",
+                    ""action"": ""Symbols"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""81b107d8-85c2-4ba4-a292-c01c804d3b10"",
+                    ""id"": ""83c156dc-ea09-4911-86d1-cca317e88345"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",
-                    ""action"": ""Heart"",
+                    ""action"": ""Symbols"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1429a069-70d9-4e7e-bfc1-ac2651afc335"",
+                    ""id"": ""35b6f848-56f3-423c-8a82-7d8664832cee"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=3)"",
                     ""groups"": """",
-                    ""action"": ""Diamond"",
+                    ""action"": ""Symbols"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3fa48fff-2563-4562-b1cb-703a65970e41"",
+                    ""id"": ""31413e1f-6c4e-4834-9975-9604eb156d1b"",
                     ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=4)"",
                     ""groups"": """",
-                    ""action"": ""Clover"",
+                    ""action"": ""Symbols"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -206,42 +152,42 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""id"": ""dd0eb146-9750-4d9e-85e5-382f6cebbaa4"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
-                    ""processors"": ""Scale"",
+                    ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SquareButton1"",
+                    ""action"": ""SquareButtons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1b34c77c-20c7-4e74-90d2-ebe1a2b617f4"",
+                    ""id"": ""8c5d2550-50c4-4d41-94cb-f0559d47f312"",
                     ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",
-                    ""action"": ""SquareButton2"",
+                    ""action"": ""SquareButtons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""871ff329-7437-4f5b-9168-54ea6994206c"",
+                    ""id"": ""36192c38-cf1f-48ab-a68e-fc2294ecb528"",
                     ""path"": ""<Keyboard>/h"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=3)"",
                     ""groups"": """",
-                    ""action"": ""SquareButton3"",
+                    ""action"": ""SquareButtons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f000a2fe-214c-4043-b520-2c1ea34bf5ab"",
+                    ""id"": ""40ed0f33-ab29-4dc4-8bfa-f206eeaa922d"",
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=4)"",
                     ""groups"": """",
-                    ""action"": ""SquareButton4"",
+                    ""action"": ""SquareButtons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -319,14 +265,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         // AMcontrols
         m_AMcontrols = asset.FindActionMap("AMcontrols", throwIfNotFound: true);
         m_AMcontrols_GoldenButtonLeft = m_AMcontrols.FindAction("GoldenButtonLeft", throwIfNotFound: true);
-        m_AMcontrols_Spades = m_AMcontrols.FindAction("Spades", throwIfNotFound: true);
-        m_AMcontrols_Heart = m_AMcontrols.FindAction("Heart", throwIfNotFound: true);
-        m_AMcontrols_Diamond = m_AMcontrols.FindAction("Diamond", throwIfNotFound: true);
-        m_AMcontrols_Clover = m_AMcontrols.FindAction("Clover", throwIfNotFound: true);
-        m_AMcontrols_SquareButton1 = m_AMcontrols.FindAction("SquareButton1", throwIfNotFound: true);
-        m_AMcontrols_SquareButton2 = m_AMcontrols.FindAction("SquareButton2", throwIfNotFound: true);
-        m_AMcontrols_SquareButton3 = m_AMcontrols.FindAction("SquareButton3", throwIfNotFound: true);
-        m_AMcontrols_SquareButton4 = m_AMcontrols.FindAction("SquareButton4", throwIfNotFound: true);
+        m_AMcontrols_Symbols = m_AMcontrols.FindAction("Symbols", throwIfNotFound: true);
+        m_AMcontrols_SquareButtons = m_AMcontrols.FindAction("SquareButtons", throwIfNotFound: true);
         m_AMcontrols_InsertCoin1 = m_AMcontrols.FindAction("InsertCoin1", throwIfNotFound: true);
         m_AMcontrols_InsertCoin2 = m_AMcontrols.FindAction("InsertCoin2", throwIfNotFound: true);
         m_AMcontrols_RightGoldenButton = m_AMcontrols.FindAction("RightGoldenButton", throwIfNotFound: true);
@@ -393,14 +333,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_AMcontrols;
     private List<IAMcontrolsActions> m_AMcontrolsActionsCallbackInterfaces = new List<IAMcontrolsActions>();
     private readonly InputAction m_AMcontrols_GoldenButtonLeft;
-    private readonly InputAction m_AMcontrols_Spades;
-    private readonly InputAction m_AMcontrols_Heart;
-    private readonly InputAction m_AMcontrols_Diamond;
-    private readonly InputAction m_AMcontrols_Clover;
-    private readonly InputAction m_AMcontrols_SquareButton1;
-    private readonly InputAction m_AMcontrols_SquareButton2;
-    private readonly InputAction m_AMcontrols_SquareButton3;
-    private readonly InputAction m_AMcontrols_SquareButton4;
+    private readonly InputAction m_AMcontrols_Symbols;
+    private readonly InputAction m_AMcontrols_SquareButtons;
     private readonly InputAction m_AMcontrols_InsertCoin1;
     private readonly InputAction m_AMcontrols_InsertCoin2;
     private readonly InputAction m_AMcontrols_RightGoldenButton;
@@ -410,14 +344,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         private @Controller m_Wrapper;
         public AMcontrolsActions(@Controller wrapper) { m_Wrapper = wrapper; }
         public InputAction @GoldenButtonLeft => m_Wrapper.m_AMcontrols_GoldenButtonLeft;
-        public InputAction @Spades => m_Wrapper.m_AMcontrols_Spades;
-        public InputAction @Heart => m_Wrapper.m_AMcontrols_Heart;
-        public InputAction @Diamond => m_Wrapper.m_AMcontrols_Diamond;
-        public InputAction @Clover => m_Wrapper.m_AMcontrols_Clover;
-        public InputAction @SquareButton1 => m_Wrapper.m_AMcontrols_SquareButton1;
-        public InputAction @SquareButton2 => m_Wrapper.m_AMcontrols_SquareButton2;
-        public InputAction @SquareButton3 => m_Wrapper.m_AMcontrols_SquareButton3;
-        public InputAction @SquareButton4 => m_Wrapper.m_AMcontrols_SquareButton4;
+        public InputAction @Symbols => m_Wrapper.m_AMcontrols_Symbols;
+        public InputAction @SquareButtons => m_Wrapper.m_AMcontrols_SquareButtons;
         public InputAction @InsertCoin1 => m_Wrapper.m_AMcontrols_InsertCoin1;
         public InputAction @InsertCoin2 => m_Wrapper.m_AMcontrols_InsertCoin2;
         public InputAction @RightGoldenButton => m_Wrapper.m_AMcontrols_RightGoldenButton;
@@ -434,30 +362,12 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @GoldenButtonLeft.started += instance.OnGoldenButtonLeft;
             @GoldenButtonLeft.performed += instance.OnGoldenButtonLeft;
             @GoldenButtonLeft.canceled += instance.OnGoldenButtonLeft;
-            @Spades.started += instance.OnSpades;
-            @Spades.performed += instance.OnSpades;
-            @Spades.canceled += instance.OnSpades;
-            @Heart.started += instance.OnHeart;
-            @Heart.performed += instance.OnHeart;
-            @Heart.canceled += instance.OnHeart;
-            @Diamond.started += instance.OnDiamond;
-            @Diamond.performed += instance.OnDiamond;
-            @Diamond.canceled += instance.OnDiamond;
-            @Clover.started += instance.OnClover;
-            @Clover.performed += instance.OnClover;
-            @Clover.canceled += instance.OnClover;
-            @SquareButton1.started += instance.OnSquareButton1;
-            @SquareButton1.performed += instance.OnSquareButton1;
-            @SquareButton1.canceled += instance.OnSquareButton1;
-            @SquareButton2.started += instance.OnSquareButton2;
-            @SquareButton2.performed += instance.OnSquareButton2;
-            @SquareButton2.canceled += instance.OnSquareButton2;
-            @SquareButton3.started += instance.OnSquareButton3;
-            @SquareButton3.performed += instance.OnSquareButton3;
-            @SquareButton3.canceled += instance.OnSquareButton3;
-            @SquareButton4.started += instance.OnSquareButton4;
-            @SquareButton4.performed += instance.OnSquareButton4;
-            @SquareButton4.canceled += instance.OnSquareButton4;
+            @Symbols.started += instance.OnSymbols;
+            @Symbols.performed += instance.OnSymbols;
+            @Symbols.canceled += instance.OnSymbols;
+            @SquareButtons.started += instance.OnSquareButtons;
+            @SquareButtons.performed += instance.OnSquareButtons;
+            @SquareButtons.canceled += instance.OnSquareButtons;
             @InsertCoin1.started += instance.OnInsertCoin1;
             @InsertCoin1.performed += instance.OnInsertCoin1;
             @InsertCoin1.canceled += instance.OnInsertCoin1;
@@ -477,30 +387,12 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             @GoldenButtonLeft.started -= instance.OnGoldenButtonLeft;
             @GoldenButtonLeft.performed -= instance.OnGoldenButtonLeft;
             @GoldenButtonLeft.canceled -= instance.OnGoldenButtonLeft;
-            @Spades.started -= instance.OnSpades;
-            @Spades.performed -= instance.OnSpades;
-            @Spades.canceled -= instance.OnSpades;
-            @Heart.started -= instance.OnHeart;
-            @Heart.performed -= instance.OnHeart;
-            @Heart.canceled -= instance.OnHeart;
-            @Diamond.started -= instance.OnDiamond;
-            @Diamond.performed -= instance.OnDiamond;
-            @Diamond.canceled -= instance.OnDiamond;
-            @Clover.started -= instance.OnClover;
-            @Clover.performed -= instance.OnClover;
-            @Clover.canceled -= instance.OnClover;
-            @SquareButton1.started -= instance.OnSquareButton1;
-            @SquareButton1.performed -= instance.OnSquareButton1;
-            @SquareButton1.canceled -= instance.OnSquareButton1;
-            @SquareButton2.started -= instance.OnSquareButton2;
-            @SquareButton2.performed -= instance.OnSquareButton2;
-            @SquareButton2.canceled -= instance.OnSquareButton2;
-            @SquareButton3.started -= instance.OnSquareButton3;
-            @SquareButton3.performed -= instance.OnSquareButton3;
-            @SquareButton3.canceled -= instance.OnSquareButton3;
-            @SquareButton4.started -= instance.OnSquareButton4;
-            @SquareButton4.performed -= instance.OnSquareButton4;
-            @SquareButton4.canceled -= instance.OnSquareButton4;
+            @Symbols.started -= instance.OnSymbols;
+            @Symbols.performed -= instance.OnSymbols;
+            @Symbols.canceled -= instance.OnSymbols;
+            @SquareButtons.started -= instance.OnSquareButtons;
+            @SquareButtons.performed -= instance.OnSquareButtons;
+            @SquareButtons.canceled -= instance.OnSquareButtons;
             @InsertCoin1.started -= instance.OnInsertCoin1;
             @InsertCoin1.performed -= instance.OnInsertCoin1;
             @InsertCoin1.canceled -= instance.OnInsertCoin1;
@@ -533,14 +425,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     public interface IAMcontrolsActions
     {
         void OnGoldenButtonLeft(InputAction.CallbackContext context);
-        void OnSpades(InputAction.CallbackContext context);
-        void OnHeart(InputAction.CallbackContext context);
-        void OnDiamond(InputAction.CallbackContext context);
-        void OnClover(InputAction.CallbackContext context);
-        void OnSquareButton1(InputAction.CallbackContext context);
-        void OnSquareButton2(InputAction.CallbackContext context);
-        void OnSquareButton3(InputAction.CallbackContext context);
-        void OnSquareButton4(InputAction.CallbackContext context);
+        void OnSymbols(InputAction.CallbackContext context);
+        void OnSquareButtons(InputAction.CallbackContext context);
         void OnInsertCoin1(InputAction.CallbackContext context);
         void OnInsertCoin2(InputAction.CallbackContext context);
         void OnRightGoldenButton(InputAction.CallbackContext context);

@@ -3,59 +3,68 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
+using UnityEngine.InputSystem.Android;
+using UnityEngine.Assertions.Must;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Transform[] _movementSlotsTransform;
     [SerializeField] Transform _playerTransform;
     private Controller _ControllerClass;
-    private List<InputAction> _SquareButtons;
+    private Controls _Buttons;
 
+    class Controls
+    {
+        public InputAction m_Moves = new InputAction();
+        public InputAction m_Symbols = new InputAction();
+        private List<InputAction> _actions = new List<InputAction>();
+
+        public void EnableInputAction(bool enable)
+        {
+            List<InputAction> actions = new List<InputAction>();
+            actions.Add(m_Moves);
+            actions.Add(m_Symbols);
+            foreach (InputAction IA in actions)
+            {
+                if (enable)
+                {
+                    IA.Enable();
+                }
+                else
+                {
+                    IA.Disable();
+                }
+            }
+        }
+    }
     void Awake()
     {
         _ControllerClass = new Controller();
-        #region AddingSquareButtonsToList
-        _SquareButtons = new List<InputAction>();
-        _SquareButtons.Add(_ControllerClass.AMcontrols.SquareButton1);
-        _SquareButtons.Add(_ControllerClass.AMcontrols.SquareButton2);
-        _SquareButtons.Add(_ControllerClass.AMcontrols.SquareButton3);
-        _SquareButtons.Add(_ControllerClass.AMcontrols.SquareButton4);
-        #endregion
+        _Buttons = new Controls();
+        _Buttons.m_Moves = _ControllerClass.AMcontrols.SquareButtons;
+        _Buttons.m_Symbols = _ControllerClass.AMcontrols.Symbols;
     }
 
     private void OnEnable()
     {
-        EnableInputAction(true);
-        
+        _Buttons.EnableInputAction(true);
+        _Buttons.m_Moves.performed += SquareButtons;
+        _Buttons.m_Symbols.performed += Symbols;
+
+
     }
     private void OnDisable()
     {
-        EnableInputAction(false);
-    }
-    void Update()
-    {
-        
+        _Buttons.EnableInputAction(false);
     }
     private void SquareButtons(InputAction.CallbackContext context)
     {
         float i = context.ReadValue<float>();
-        _playerTransform.position = _movementSlotsTransform[(int)i-1].position;
+        _playerTransform.DOMove(_movementSlotsTransform[(int)i - 1].position,0.1f);
     }
-
-    private void EnableInputAction(bool enable)
+    private void Symbols(InputAction.CallbackContext context)
     {
-        foreach(InputAction IA in _SquareButtons)
-        {
-            if (enable)
-            {
-                
-                IA.Enable();
-                IA.performed += SquareButtons;
-            }
-            else
-            {
-                IA.Disable();
-            }
-        }
+        // Retourner la bonne valeur, BlablaFonctions(context.ReadValue<float>());
     }
 }

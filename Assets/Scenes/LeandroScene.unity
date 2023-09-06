@@ -204,20 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300e96c1fbac5d04b8bdc3c7d40b1770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _IAplayerAction:
-    m_Name: I Aplayer
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: cd653b51-bcf4-4b1f-9efd-673fa93ad574
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   _movementSlotsTransform:
   - {fileID: 729312679}
   - {fileID: 1840841152}
   - {fileID: 1702109743}
   - {fileID: 1971021714}
+  _playerTransform: {fileID: 1328621257}
 --- !u!1 &729312678
 GameObject:
   m_ObjectHideFlags: 0
