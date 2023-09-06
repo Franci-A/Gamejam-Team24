@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SuspicionBar : MonoBehaviour
 {
-    [SerializeField] private GameObjectEvent lostCultist;
+    [SerializeField] private GameObjectEvent failedCultist;
     private float currentValue;
     [SerializeField] private float totalValue = 100;
 
@@ -15,7 +15,7 @@ public class SuspicionBar : MonoBehaviour
 
     private void Start()
     {
-        lostCultist.scriptableEvent.AddListener(AddSuspicion);
+        failedCultist.scriptableEvent.AddListener(AddSuspicion);
         if(slider == null) slider = GetComponentInChildren<Slider>();
         currentValue = 0;
         UpdateSlider();
@@ -43,6 +43,6 @@ public class SuspicionBar : MonoBehaviour
 
     private void OnDestroy()
     {
-        lostCultist.scriptableEvent.RemoveListener(AddSuspicion);
+        failedCultist.scriptableEvent.RemoveListener(AddSuspicion);
     }
 }

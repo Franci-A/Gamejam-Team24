@@ -20,6 +20,7 @@ public class CultistController : MonoBehaviour
     [SerializeField] private Image iconInstance;
     [SerializeField] private Sprite[] iconSprites;
     [SerializeField] private GameObjectEvent lostEvent;
+    [SerializeField] private GameObjectEvent joinedEvent;
     public List<CultistsPreset> _CultistPresets;
 
     public void Init(CultistsPreset cultistStats)
@@ -86,11 +87,10 @@ public class CultistController : MonoBehaviour
             totalInputs--;
             if (totalInputs <= 0)
             {
-                Debug.Log("All inputs done");
-                isInDialog = false;
-                iconInstance.gameObject.SetActive(false);
+                DialogFinished();
             }
-            else { 
+            else 
+            { 
                 GetSymbole();
             }
         }
@@ -98,6 +98,14 @@ public class CultistController : MonoBehaviour
         {
             FailedDialog();
         }
+    }
+
+    public void DialogFinished()
+    {
+        Debug.Log("All inputs done");
+        isInDialog = false;
+        iconInstance.gameObject.SetActive(false);
+        joinedEvent?.scriptableEvent.Invoke(totalPrize);
     }
 
     public void FailedDialog()
@@ -109,18 +117,17 @@ public class CultistController : MonoBehaviour
         iconInstance.gameObject.SetActive(false);
     }
     
-    public void LostCultist()
+    public void MissedCultist()
     {
         Debug.Log("Missed");
-        lostEvent?.scriptableEvent.Invoke(cultistValue);
         Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-     if (collision.CompareTag("EndZone"))
+        if (collision.CompareTag("EndZone"))
         {
-            LostCultist();
+            MissedCultist();
         }
     }
 

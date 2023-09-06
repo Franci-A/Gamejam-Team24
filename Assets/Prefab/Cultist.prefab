@@ -288,6 +288,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0113040d562b4c84ab33fe802ef40d8d, type: 3}
   - {fileID: 21300000, guid: ae13e0d8b648b454d8a40761bfabfe5d, type: 3}
   lostEvent: {fileID: 11400000, guid: 98117135f03952644bd7d91fb068d492, type: 2}
+  joinedEvent: {fileID: 11400000, guid: 36e1201bdb8015940a73ef4ec310da34, type: 2}
   _CultistPresets:
   - {fileID: 11400000, guid: 76cd4cd63965960499339393b6ee5a19, type: 2}
   - {fileID: 11400000, guid: 7220bb1b4ca1e3a4aa41b18d2015a2b3, type: 2}
