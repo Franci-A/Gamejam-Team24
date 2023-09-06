@@ -12,13 +12,16 @@ public class CultistController : MonoBehaviour
     private bool isInDialog = false;
     private int currentInput;
     private int totalInputs;
+    private float value;
 
     [SerializeField] private Image iconInstance;
     [SerializeField] private Sprite[] iconSprites;
+    [SerializeField] private GameObjectEvent lostEvent;
 
-    public void Init(int numberOfInputs)
+    public void Init(int numberOfInputs, float cultistValue)
     {
         totalInputs = numberOfInputs;
+        value = cultistValue;
     }
 
     void Update()
@@ -91,12 +94,14 @@ public class CultistController : MonoBehaviour
     public void FailedDialog()
     {
         Debug.Log("Failed");
+        lostEvent?.scriptableEvent.Invoke(value);
         Destroy(this.gameObject);
     }
     
-    public void DestroyCultist()
+    public void LostCultist()
     {
         Debug.Log("Missed");
+        lostEvent?.scriptableEvent.Invoke(value);
         Destroy(this.gameObject);
     }
 
@@ -107,7 +112,7 @@ public class CultistController : MonoBehaviour
             StartDialog();
         }else if (collision.CompareTag("EndZone"))
         {
-            DestroyCultist();
+            LostCultist();
         }
     }
 }
