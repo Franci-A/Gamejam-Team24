@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cultistJoined: {fileID: 11400000, guid: 36e1201bdb8015940a73ef4ec310da34, type: 2}
+  cultistSacrifice: {fileID: 11400000, guid: 024b91f91e7379e47987c68eba4d65f1, type: 2}
   totalValue: 100
   slider: {fileID: 6116888966591056232}
   scores:

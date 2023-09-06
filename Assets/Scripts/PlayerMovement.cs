@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.instance.PlayClip("CrowdTalk");
         lostCultist.scriptableEvent.AddListener(OnReleaseCultist);
         joinedCultist.scriptableEvent.AddListener(OnReleaseCultist);
     }
@@ -63,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void Awake()
     {
-        SoundManager.instance.PlayClip("CrowdTalk");
         _ControllerClass = new Controller();
         _Buttons = new Controls();
         #region Assign Inputs
@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         _Buttons.m_Joystick = _ControllerClass.AMcontrols.Joystick;
         #endregion
     }
+    
 
     private void OnEnable()
     {
