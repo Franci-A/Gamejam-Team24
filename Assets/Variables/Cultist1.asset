@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Cultist1
   m_EditorClassIdentifier: 
   CultistName: 
-  CultistPrizz: 0
+  CultistPrize: 10
   SuspicionLevel: 0
   CultistLevel: 0
-  NumberOfSymbols: 0
+  NumberOfSymbolsMin: -10
+  NumberOfSymbolsMax: 10
   CultistTime: 0

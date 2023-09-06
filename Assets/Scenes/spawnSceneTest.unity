@@ -410,14 +410,13 @@ MonoBehaviour:
   spawnArray:
   - {fileID: 1669390669}
   - {fileID: 55191834}
-  spawnWaitTime: 0
   spawnWaitTimeMin: 1
   spawnWaitTimeMax: 3
   circleRadius: 0.7
   cultistMask:
     serializedVersion: 2
     m_Bits: 64
-  cultistPrefab: {fileID: 5311840529157558764, guid: e94cc483550111046b8eb26b23ce06cf, type: 3}
+  cultistPrefab: {fileID: 8581349374312404868, guid: e94cc483550111046b8eb26b23ce06cf, type: 3}
 --- !u!1 &1880152180
 GameObject:
   m_ObjectHideFlags: 0
