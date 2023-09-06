@@ -28,7 +28,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
             ""id"": ""6e4037ce-3fdf-42c3-abb6-293150ca1bc5"",
             ""actions"": [
                 {
-                    ""name"": ""GoldenButtonLeft"",
+                    ""name"": ""GoldButtons"",
                     ""type"": ""Button"",
                     ""id"": ""bf8375c9-d843-4d87-aaca-e873b7c23ed7"",
                     ""expectedControlType"": ""Button"",
@@ -52,30 +52,12 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""InsertCoin1"",
+                    ""name"": ""AddCoinsButtons"",
                     ""type"": ""Button"",
                     ""id"": ""b1741229-fd88-43e8-b3ff-018badd06b0b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""InsertCoin2"",
-                    ""type"": ""Button"",
-                    ""id"": ""a7528e2b-b724-4e7e-8b09-71b5bd113168"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RightGoldenButton"",
-                    ""type"": ""Button"",
-                    ""id"": ""27dc8f65-a13c-467e-a3ca-2fc55bfabdbf"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -99,7 +81,18 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""GoldenButtonLeft"",
+                    ""action"": ""GoldButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7715cc4-aa71-4719-9299-f2d282745229"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""GoldButtons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -198,29 +191,18 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InsertCoin1"",
+                    ""action"": ""AddCoinsButtons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""18cde29c-23f4-4ab4-ba1c-82af77ec5085"",
+                    ""id"": ""882caaa1-f8e9-433d-adbc-b9cf7a49ee0b"",
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",
-                    ""action"": ""InsertCoin2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e453cb2b-fd33-4371-8319-b1c9c4c3f481"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightGoldenButton"",
+                    ""action"": ""AddCoinsButtons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -264,12 +246,10 @@ public partial class @Controller: IInputActionCollection2, IDisposable
 }");
         // AMcontrols
         m_AMcontrols = asset.FindActionMap("AMcontrols", throwIfNotFound: true);
-        m_AMcontrols_GoldenButtonLeft = m_AMcontrols.FindAction("GoldenButtonLeft", throwIfNotFound: true);
+        m_AMcontrols_GoldButtons = m_AMcontrols.FindAction("GoldButtons", throwIfNotFound: true);
         m_AMcontrols_Symbols = m_AMcontrols.FindAction("Symbols", throwIfNotFound: true);
         m_AMcontrols_SquareButtons = m_AMcontrols.FindAction("SquareButtons", throwIfNotFound: true);
-        m_AMcontrols_InsertCoin1 = m_AMcontrols.FindAction("InsertCoin1", throwIfNotFound: true);
-        m_AMcontrols_InsertCoin2 = m_AMcontrols.FindAction("InsertCoin2", throwIfNotFound: true);
-        m_AMcontrols_RightGoldenButton = m_AMcontrols.FindAction("RightGoldenButton", throwIfNotFound: true);
+        m_AMcontrols_AddCoinsButtons = m_AMcontrols.FindAction("AddCoinsButtons", throwIfNotFound: true);
         m_AMcontrols_Joystick = m_AMcontrols.FindAction("Joystick", throwIfNotFound: true);
     }
 
@@ -332,23 +312,19 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     // AMcontrols
     private readonly InputActionMap m_AMcontrols;
     private List<IAMcontrolsActions> m_AMcontrolsActionsCallbackInterfaces = new List<IAMcontrolsActions>();
-    private readonly InputAction m_AMcontrols_GoldenButtonLeft;
+    private readonly InputAction m_AMcontrols_GoldButtons;
     private readonly InputAction m_AMcontrols_Symbols;
     private readonly InputAction m_AMcontrols_SquareButtons;
-    private readonly InputAction m_AMcontrols_InsertCoin1;
-    private readonly InputAction m_AMcontrols_InsertCoin2;
-    private readonly InputAction m_AMcontrols_RightGoldenButton;
+    private readonly InputAction m_AMcontrols_AddCoinsButtons;
     private readonly InputAction m_AMcontrols_Joystick;
     public struct AMcontrolsActions
     {
         private @Controller m_Wrapper;
         public AMcontrolsActions(@Controller wrapper) { m_Wrapper = wrapper; }
-        public InputAction @GoldenButtonLeft => m_Wrapper.m_AMcontrols_GoldenButtonLeft;
+        public InputAction @GoldButtons => m_Wrapper.m_AMcontrols_GoldButtons;
         public InputAction @Symbols => m_Wrapper.m_AMcontrols_Symbols;
         public InputAction @SquareButtons => m_Wrapper.m_AMcontrols_SquareButtons;
-        public InputAction @InsertCoin1 => m_Wrapper.m_AMcontrols_InsertCoin1;
-        public InputAction @InsertCoin2 => m_Wrapper.m_AMcontrols_InsertCoin2;
-        public InputAction @RightGoldenButton => m_Wrapper.m_AMcontrols_RightGoldenButton;
+        public InputAction @AddCoinsButtons => m_Wrapper.m_AMcontrols_AddCoinsButtons;
         public InputAction @Joystick => m_Wrapper.m_AMcontrols_Joystick;
         public InputActionMap Get() { return m_Wrapper.m_AMcontrols; }
         public void Enable() { Get().Enable(); }
@@ -359,24 +335,18 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_AMcontrolsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_AMcontrolsActionsCallbackInterfaces.Add(instance);
-            @GoldenButtonLeft.started += instance.OnGoldenButtonLeft;
-            @GoldenButtonLeft.performed += instance.OnGoldenButtonLeft;
-            @GoldenButtonLeft.canceled += instance.OnGoldenButtonLeft;
+            @GoldButtons.started += instance.OnGoldButtons;
+            @GoldButtons.performed += instance.OnGoldButtons;
+            @GoldButtons.canceled += instance.OnGoldButtons;
             @Symbols.started += instance.OnSymbols;
             @Symbols.performed += instance.OnSymbols;
             @Symbols.canceled += instance.OnSymbols;
             @SquareButtons.started += instance.OnSquareButtons;
             @SquareButtons.performed += instance.OnSquareButtons;
             @SquareButtons.canceled += instance.OnSquareButtons;
-            @InsertCoin1.started += instance.OnInsertCoin1;
-            @InsertCoin1.performed += instance.OnInsertCoin1;
-            @InsertCoin1.canceled += instance.OnInsertCoin1;
-            @InsertCoin2.started += instance.OnInsertCoin2;
-            @InsertCoin2.performed += instance.OnInsertCoin2;
-            @InsertCoin2.canceled += instance.OnInsertCoin2;
-            @RightGoldenButton.started += instance.OnRightGoldenButton;
-            @RightGoldenButton.performed += instance.OnRightGoldenButton;
-            @RightGoldenButton.canceled += instance.OnRightGoldenButton;
+            @AddCoinsButtons.started += instance.OnAddCoinsButtons;
+            @AddCoinsButtons.performed += instance.OnAddCoinsButtons;
+            @AddCoinsButtons.canceled += instance.OnAddCoinsButtons;
             @Joystick.started += instance.OnJoystick;
             @Joystick.performed += instance.OnJoystick;
             @Joystick.canceled += instance.OnJoystick;
@@ -384,24 +354,18 @@ public partial class @Controller: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IAMcontrolsActions instance)
         {
-            @GoldenButtonLeft.started -= instance.OnGoldenButtonLeft;
-            @GoldenButtonLeft.performed -= instance.OnGoldenButtonLeft;
-            @GoldenButtonLeft.canceled -= instance.OnGoldenButtonLeft;
+            @GoldButtons.started -= instance.OnGoldButtons;
+            @GoldButtons.performed -= instance.OnGoldButtons;
+            @GoldButtons.canceled -= instance.OnGoldButtons;
             @Symbols.started -= instance.OnSymbols;
             @Symbols.performed -= instance.OnSymbols;
             @Symbols.canceled -= instance.OnSymbols;
             @SquareButtons.started -= instance.OnSquareButtons;
             @SquareButtons.performed -= instance.OnSquareButtons;
             @SquareButtons.canceled -= instance.OnSquareButtons;
-            @InsertCoin1.started -= instance.OnInsertCoin1;
-            @InsertCoin1.performed -= instance.OnInsertCoin1;
-            @InsertCoin1.canceled -= instance.OnInsertCoin1;
-            @InsertCoin2.started -= instance.OnInsertCoin2;
-            @InsertCoin2.performed -= instance.OnInsertCoin2;
-            @InsertCoin2.canceled -= instance.OnInsertCoin2;
-            @RightGoldenButton.started -= instance.OnRightGoldenButton;
-            @RightGoldenButton.performed -= instance.OnRightGoldenButton;
-            @RightGoldenButton.canceled -= instance.OnRightGoldenButton;
+            @AddCoinsButtons.started -= instance.OnAddCoinsButtons;
+            @AddCoinsButtons.performed -= instance.OnAddCoinsButtons;
+            @AddCoinsButtons.canceled -= instance.OnAddCoinsButtons;
             @Joystick.started -= instance.OnJoystick;
             @Joystick.performed -= instance.OnJoystick;
             @Joystick.canceled -= instance.OnJoystick;
@@ -424,12 +388,10 @@ public partial class @Controller: IInputActionCollection2, IDisposable
     public AMcontrolsActions @AMcontrols => new AMcontrolsActions(this);
     public interface IAMcontrolsActions
     {
-        void OnGoldenButtonLeft(InputAction.CallbackContext context);
+        void OnGoldButtons(InputAction.CallbackContext context);
         void OnSymbols(InputAction.CallbackContext context);
         void OnSquareButtons(InputAction.CallbackContext context);
-        void OnInsertCoin1(InputAction.CallbackContext context);
-        void OnInsertCoin2(InputAction.CallbackContext context);
-        void OnRightGoldenButton(InputAction.CallbackContext context);
+        void OnAddCoinsButtons(InputAction.CallbackContext context);
         void OnJoystick(InputAction.CallbackContext context);
     }
 }
