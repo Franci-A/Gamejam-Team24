@@ -9,6 +9,11 @@ public class SpawnBehaviour : MonoBehaviour
     public float spawnWaitTimeMin;
     public float spawnWaitTimeMax;
 
+    [SerializeField] private float circleRadius;
+
+    [SerializeField] private LayerMask cultistMask;
+    private Vector3 cultistPosition;
+
     private int randomNumberOfCultist;
 
     public GameObject cultistPrefab;
@@ -53,7 +58,15 @@ public class SpawnBehaviour : MonoBehaviour
         */
         for(var counterOfSpawningCultist = 0; counterOfSpawningCultist< randomNumberOfCultist; counterOfSpawningCultist++)
         {
-            var cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
+            cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
+
+            var cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
+
+            while(cultistColliders != null)
+            {
+                cultistPosition = new Vector3(Random.Range(spawnArray[0].transform.position.x, spawnArray[1].transform.position.x), spawnArray[0].transform.position.y, spawnArray[0].transform.position.z);
+                cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
+            }
             Instantiate(cultistPrefab, cultistPosition, Quaternion.identity);
         }
         spawnWaitTime = Random.Range(spawnWaitTimeMin, spawnWaitTimeMax);
@@ -65,6 +78,11 @@ public class SpawnBehaviour : MonoBehaviour
         yield return new WaitForSeconds(spawnWaitTime);
         CultistSpawn();
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(cultistPosition, circleRadius);
     }
 
     private void OnDestroy()

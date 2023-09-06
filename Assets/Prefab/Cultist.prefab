@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1155349372032177871}
   - component: {fileID: 7129651486542679450}
   - component: {fileID: 8568934356106054873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 6701298192845851022}
   - component: {fileID: 7222874476434296473}
   - component: {fileID: 4872604365078987038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 8581349374312404868}
   - component: {fileID: 1984998757542417221}
   - component: {fileID: 1238087551006028487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
