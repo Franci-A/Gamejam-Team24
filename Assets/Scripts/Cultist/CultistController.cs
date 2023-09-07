@@ -63,6 +63,17 @@ public class CultistController : MonoBehaviour
             Image icon = Instantiate<Image>(iconPrefab, iconParent.transform);
             icon.rectTransform.DOLocalMoveY(-10 * i, .1f);
             int symbol = Random.Range(0, 4);
+            if (cultistId == 3)
+            {
+                if(i == 0)
+                {
+                    symbol = Random.Range(4, 6);
+                }
+                else
+                {
+                    symbol = Random.Range(0, 6);
+                }
+            }
             iconsList[i] = symbol;
             icon.sprite = iconSprites[symbol];
             iconsImages.Add(icon);
