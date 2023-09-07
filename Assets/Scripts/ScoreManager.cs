@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private float currentScore;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObjectEvent addScoreEvent;
+    [SerializeField] private FloatScriptable scoreMultiplier;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(object obj)
     {
-        currentScore += (float)obj;
+        currentScore += (float)obj * scoreMultiplier.Value;
         UpdateScore();
     }
 

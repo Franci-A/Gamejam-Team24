@@ -425,9 +425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a6a22084e83c4db14d1ab86cef532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 11400000, guid: fbd6fa6526cea87408a23add08e51b7b, type: 2}
+  currentScore: 0
   scoreText: {fileID: 3104448994502356765}
   addScoreEvent: {fileID: 11400000, guid: c76b2b85e81b23b459c50a4a980d0067, type: 2}
+  scoreMultiplier: {fileID: 11400000, guid: d3e9966a6ba0dd24cb6a5023ad76ea2d, type: 2}
 --- !u!1 &4707295778423187519
 GameObject:
   m_ObjectHideFlags: 0
