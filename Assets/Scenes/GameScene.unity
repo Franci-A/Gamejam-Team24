@@ -346,6 +346,12 @@ MonoBehaviour:
     m_Bits: 64
   cultistDisplacementPosition: 0.5
   cultistPrefab: {fileID: 8581349374312404868, guid: e94cc483550111046b8eb26b23ce06cf, type: 3}
+  _WavePresets:
+  - {fileID: 11400000, guid: ba36251ad383a5a479d48ed8b32c72a6, type: 2}
+  - {fileID: 11400000, guid: c0a6ec02ae611fb4cb1b80631e177e7d, type: 2}
+  - {fileID: 11400000, guid: 3b8637cc4a3bc7140bf1072286bd183f, type: 2}
+  - {fileID: 11400000, guid: 5d30aeee7d1435a4a9626d4f4377a3f0, type: 2}
+  - {fileID: 11400000, guid: 57fec5fd1ad69ce46a0f540d5105099c, type: 2}
 --- !u!4 &230167379
 Transform:
   m_ObjectHideFlags: 0

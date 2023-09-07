@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7e87afabed83e4cb0432547f83f062, type: 3}
-  m_Name: Cultist_Satan
+  m_Script: {fileID: 11500000, guid: e6a1f7ca9e3490b498a070e3bd318948, type: 3}
+  m_Name: Wave3
   m_EditorClassIdentifier: 
-  CultistName: Satan
-  CultistPrize: 1000
-  SuspicionLevel: 0
-  CultistLevel: 50
-  MinNumberOfSymbols: 1
-  MaxNumberOfSymbols: 5
-  CultistTime: 10
+  numberOfCultistsEachWaves: 0
+  typePauvreRate: 20
+  typeRicheRate: 60
+  typePoliceRate: 31
+  typeJokerRate: 50
+  typeSatanRate: 0
