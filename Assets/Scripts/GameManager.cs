@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     public bool _shouldSpawn;
     public List<GameObject> _CultistsGMref = new List<GameObject>();
+    [SerializeField] private GameObjectEvent gameOverEvent;
+    PlayerMovement player;
+
     private void Awake()
     {
         if (Instance != null)
@@ -17,5 +21,13 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        gameOverEvent.scriptableEvent.AddListener(GameOver);
+        player = FindObjectOfType<PlayerMovement>();
+    }
+
+    private void GameOver(object obj)
+    {
+        SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
     }
 }

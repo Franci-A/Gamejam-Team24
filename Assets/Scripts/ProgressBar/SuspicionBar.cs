@@ -7,6 +7,7 @@ public class SuspicionBar : MonoBehaviour
 {
     [SerializeField] private GameObjectEvent failedCultist;
     [SerializeField] private GameObjectEvent cultistSacrifice;
+    [SerializeField] private GameObjectEvent gameOver;
     private float currentValue;
     [SerializeField] private float totalValue = 100;
 
@@ -41,7 +42,7 @@ public class SuspicionBar : MonoBehaviour
         slider.value = currentValue / totalValue;
         if (currentValue >= totalValue)
         {
-            //Debug.Log("game over");
+            gameOver.scriptableEvent.Invoke(null);
         }
     }
 
