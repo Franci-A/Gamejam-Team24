@@ -8,7 +8,9 @@ public class CultistController : MonoBehaviour
     [SerializeField] private float baseSpeed = 1;
     [SerializeField] private Vector3 direction = new Vector3(0, 0 , -1);
     private float timer = 0;
-    public bool isInDialog = false;
+    [SerializeField] private Image timerImage;
+    [SerializeField] private GameObject canvasParent;
+    [HideInInspector] public bool isInDialog = false;
     private int currentInput;
 
     private float totalPrize;
@@ -35,6 +37,8 @@ public class CultistController : MonoBehaviour
         cultistTimer = _CultistPresets[randomCultist].CultistTime;
         timer = cultistTimer;
         isActive = true;
+        timerImage.fillAmount = 1;
+        canvasParent.SetActive(false);
     }
 
     void Update()
@@ -49,6 +53,7 @@ public class CultistController : MonoBehaviour
         else
         {
             timer -= Time.deltaTime;
+            timerImage.fillAmount = timer/cultistTimer;
             if(timer <= 0)
             {
                 FailedDialog();
@@ -60,6 +65,7 @@ public class CultistController : MonoBehaviour
     {
         isInDialog = true;
         timer = cultistTimer;
+        canvasParent.SetActive(true);
         GetSymbole();
     }
 
@@ -67,7 +73,6 @@ public class CultistController : MonoBehaviour
     { 
         int symbol = Random.Range(0, 4);
         iconInstance.sprite = iconSprites[symbol];
-        iconInstance.gameObject.SetActive(true);
         currentInput = symbol;
         switch (symbol)
         {
@@ -119,7 +124,7 @@ public class CultistController : MonoBehaviour
     {
         Debug.Log("All inputs done");
         isInDialog = false;
-        iconInstance.gameObject.SetActive(false);
+        canvasParent.SetActive(false);
         Destroy(this.gameObject.GetComponent<Collider2D>());
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
@@ -128,11 +133,11 @@ public class CultistController : MonoBehaviour
     public void FailedDialog()
     {
         Debug.Log("Failed");
-        SoundManager.instance.PlayClip("FailAdept");
         isInDialog = false;
-        lostEvent?.scriptableEvent.Invoke(cultistValue);
         Destroy(this.gameObject.GetComponent<Collider2D>());
-        iconInstance.gameObject.SetActive(false);
+        canvasParent.SetActive(false);
+        lostEvent?.scriptableEvent.Invoke(cultistValue);
+        SoundManager.instance.PlayClip("FailAdept");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
