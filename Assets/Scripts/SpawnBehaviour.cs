@@ -82,13 +82,12 @@ public class SpawnBehaviour : MonoBehaviour
         for (var counterOfSpawningCultist = 0; counterOfSpawningCultist < finalCultistID.Count; counterOfSpawningCultist++)
         {
             Collider2D cultistColliders;
-            do
-            {
+            //do{
                 randomNumberPosition = Random.Range(0, 4);
                 cultistPosition = spawnArray[randomNumberPosition].transform.position;
                 cultistPosition.x = cultistPosition.x + Random.Range(-cultistDisplacementPosition, cultistDisplacementPosition);
                 cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
-            } while (cultistColliders != null);
+            //} while (cultistColliders != null);
             CultistController cultise = Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity);
             Debug.Log(finalCultistID[counterOfSpawningCultist]);
             cultise.Init(finalCultistID[counterOfSpawningCultist]);

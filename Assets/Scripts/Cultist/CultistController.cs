@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -15,7 +14,9 @@ public class CultistController : MonoBehaviour
     [SerializeField] private Image timerImage;
     [SerializeField] private Animator animator;
     [HideInInspector] public bool isInDialog = false;
+    [HideInInspector] public bool isDialogDone = false;
     private int currentInput;
+    private int indexLeft;
 
     private float totalPrize;
     public string nameCultist;
@@ -24,8 +25,10 @@ public class CultistController : MonoBehaviour
     private float suspicionValue;
     private float cultistTimer;
 
-    [SerializeField] private Image iconInstance;
+    [SerializeField] private Image iconPrefab;
     [SerializeField] private Sprite[] iconSprites;
+    private int[] iconsList;
+    private List<Image> iconsImages = new List<Image>();
 
     [Header("Events")]
     [SerializeField] private GameObjectEvent lostEvent;
@@ -46,10 +49,23 @@ public class CultistController : MonoBehaviour
     {
         nameCultist = _CultistPresets[cultistID].CultistName;
         totalPrize = _CultistPresets[cultistID].CultistPrize;
-        totalInputs = Random.Range(_CultistPresets[cultistID].MinNumberOfSymbols, _CultistPresets[cultistID].MaxNumberOfSymbols);
         cultistValue = _CultistPresets[cultistID].CultistLevel;
         suspicionValue = _CultistPresets[cultistID].SuspicionLevel;
         cultistTimer = _CultistPresets[cultistID].CultistTime;
+
+        totalInputs = Random.Range(_CultistPresets[cultistID].MinNumberOfSymbols, _CultistPresets[cultistID].MaxNumberOfSymbols);
+        iconsList = new int[totalInputs];
+        indexLeft = totalInputs - 1;
+        for (int i = totalInputs; i > 0; i--)
+        {
+            Image icon = Instantiate<Image>(iconPrefab, canvasParent.transform);
+            icon.rectTransform.DOLocalMoveY(-10 * i, .1f);
+            int symbol = Random.Range(0, 4);
+            iconsList[i -1] = symbol;
+            icon.sprite = iconSprites[symbol];
+            iconsImages.Add(icon);
+        }
+
         timer = cultistTimer;
 
         baseSpeed = Random.Range(_CultistPresets[cultistID].MinSpeed, _CultistPresets[cultistID].MaxSpeed);
@@ -72,7 +88,7 @@ public class CultistController : MonoBehaviour
         {
             Walking();
         }
-        else
+        else if(!isDialogDone)
         {
             timer -= Time.deltaTime;
             timerImage.fillAmount = timer/cultistTimer;
@@ -129,49 +145,33 @@ public class CultistController : MonoBehaviour
         animator.SetBool("IsWalking", false);
         timer = cultistTimer;
         canvasParent.SetActive(true);
-        GetSymbole();
     }
 
-    private void GetSymbole() 
-    { 
-        int symbol = Random.Range(0, 4);
-        iconInstance.sprite = iconSprites[symbol];
-        currentInput = symbol;
-        switch (symbol)
-        {
-            case 0:
-                Debug.Log("Spade + 1");
-                break;
-            case 1:
-                Debug.Log("Heart + 2");
-                break;
-            case 2:
-                Debug.Log("Diamond + 3");
-                break;
-            case 3:
-                Debug.Log("Club + 4");
-                break;
-            default:
-                break;
-        }
-    }
 
     public bool CorrectInput(int input)
     {
-        if(currentInput == input)
+        if (iconsList[currentInput] == input)
         {
-            Debug.Log("Correct input");
-            
-            totalInputs--;
-            if (totalInputs <= 0)
+            currentInput++;
+
+            Sequence seq = DOTween.Sequence();
+            seq.Append(iconsImages[indexLeft].rectTransform.DOLocalMoveX(20, .5f));
+            seq.Append(iconsImages[indexLeft].DOColor(new Color(1,1,1,0), .5f));
+            iconsImages.RemoveAt(indexLeft);
+            indexLeft--;
+
+            if (indexLeft < 0)
             {
                 DialogFinished();
                 return false;
             }
             else 
             {
+                for (int i = 0; i < indexLeft +1; i++)
+                {
+                    iconsImages[indexLeft - i].rectTransform.DOLocalMoveY(-10 * i, .5f);
+                }
                 SoundManager.instance.PlayClip("GoodMotif");
-                GetSymbole();
                 return true;
             }
         }
@@ -191,6 +191,7 @@ public class CultistController : MonoBehaviour
         animator.SetTrigger("Transform");
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
+        isDialogDone = true;
     }
 
     public void FailedDialog()
@@ -202,6 +203,7 @@ public class CultistController : MonoBehaviour
         lostEvent?.scriptableEvent.Invoke(cultistValue);
         if (animator!=null)animator.SetBool("IsWalking", true);
         SoundManager.instance.PlayClip("FailAdept");
+        isDialogDone = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

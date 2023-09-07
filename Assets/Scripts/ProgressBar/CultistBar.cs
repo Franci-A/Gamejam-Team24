@@ -12,7 +12,6 @@ public class CultistBar : MonoBehaviour
     private float currentValue;
     [SerializeField] private float totalValue = 100;
     [SerializeField] private Slider slider;
-    private float timer = 0;
     [SerializeField] private List<CultistScoreMultiplier> scores;
     [SerializeField] private FloatScriptable scoreMultiplier;
 
