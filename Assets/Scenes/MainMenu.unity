@@ -429,6 +429,8 @@ GameObject:
   - component: {fileID: 1447561533}
   - component: {fileID: 1447561532}
   - component: {fileID: 1447561531}
+  - component: {fileID: 1447561535}
+  - component: {fileID: 1447561536}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -520,6 +522,112 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1447561535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447561530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af53ad7632a841f449a0dc37d341e54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1447561536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447561530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9ca36c5b233d0194aad6d967e555ae5f, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bf8375c9-d843-4d87-aaca-e873b7c23ed7
+    m_ActionName: AMcontrols/GoldButtons[/Keyboard/q,/Keyboard/semicolon]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f722655f-8a49-4377-b803-ef3ece2c4dcb
+    m_ActionName: AMcontrols/Symbols[/Keyboard/s,/Keyboard/d,/Keyboard/x,/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf6f98d9-89f1-4473-87e1-b10f7eb3695d
+    m_ActionName: AMcontrols/SquareButtons[/Keyboard/f,/Keyboard/g,/Keyboard/h,/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1447561535}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b1741229-fd88-43e8-b3ff-018badd06b0b
+    m_ActionName: AMcontrols/AddCoinsButtons[/Keyboard/k,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8271b94b-5678-42bc-9fbc-213cf1b348d1
+    m_ActionName: AMcontrols/Joystick[/Keyboard/rightArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a6bc59ca-d1e6-4a5e-b615-25f24fb354d9
+    m_ActionName: AMcontrolsArcade/GoldButtons
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce5eaa61-486e-4146-b112-8d99a15969a4
+    m_ActionName: AMcontrolsArcade/Symbols
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f80dc660-2e8f-4f9c-9445-7a48504a9aa5
+    m_ActionName: AMcontrolsArcade/SquareButtons
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1447561535}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 07773fa4-c639-4309-9ed5-61169e247819
+    m_ActionName: AMcontrolsArcade/AddCoinsButtons
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2a71c240-bddd-4ac7-a4a7-5afa64150561
+    m_ActionName: AMcontrolsArcade/Joystick
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: AMcontrols
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1507329139
 GameObject:
   m_ObjectHideFlags: 0
