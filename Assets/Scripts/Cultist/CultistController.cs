@@ -12,6 +12,7 @@ public class CultistController : MonoBehaviour
     private int currentInput;
 
     private float totalPrize;
+    public string nameCultist;
     private int totalInputs;
     private float cultistValue;
     private float suspicionValue;
@@ -26,13 +27,14 @@ public class CultistController : MonoBehaviour
 
     private bool isActive = false;
 
-    public void Init(int randomCultist)
+    public void Init(int cultistID)
     {
-        totalPrize = _CultistPresets[randomCultist].CultistPrize;
-        totalInputs = Random.Range(_CultistPresets[randomCultist].MinNumberOfSymbols, _CultistPresets[randomCultist].MaxNumberOfSymbols);
-        cultistValue = _CultistPresets[randomCultist].CultistLevel;
-        suspicionValue = _CultistPresets[randomCultist].SuspicionLevel;
-        cultistTimer = _CultistPresets[randomCultist].CultistTime;
+        nameCultist = _CultistPresets[cultistID].CultistName;
+        totalPrize = _CultistPresets[cultistID].CultistPrize;
+        totalInputs = Random.Range(_CultistPresets[cultistID].MinNumberOfSymbols, _CultistPresets[cultistID].MaxNumberOfSymbols);
+        cultistValue = _CultistPresets[cultistID].CultistLevel;
+        suspicionValue = _CultistPresets[cultistID].SuspicionLevel;
+        cultistTimer = _CultistPresets[cultistID].CultistTime;
         timer = cultistTimer;
         isActive = true;
     }
