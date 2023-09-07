@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7e87afabed83e4cb0432547f83f062, type: 3}
-  m_Name: Cultist_Joker
+  m_Script: {fileID: 11500000, guid: f43299bc0432bf0449b49733431d97d0, type: 3}
+  m_Name: PlayerScore
   m_EditorClassIdentifier: 
-  CultistName: 
-  CultistPrize: 100
-  SuspicionLevel: 0
-  CultistLevel: 5
-  MinNumberOfSymbols: 1
-  MaxNumberOfSymbols: 3
-  CultistTime: 10

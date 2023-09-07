@@ -26,8 +26,6 @@ public class CultistController : MonoBehaviour
 
     private bool isActive = false;
 
-    public PlayerMovement player;
-
     public void Init(int randomCultist)
     {
         totalPrize = _CultistPresets[randomCultist].CultistPrize;
@@ -122,6 +120,7 @@ public class CultistController : MonoBehaviour
         Debug.Log("All inputs done");
         isInDialog = false;
         iconInstance.gameObject.SetActive(false);
+        Destroy(this.gameObject.GetComponent<Collider2D>());
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
     }

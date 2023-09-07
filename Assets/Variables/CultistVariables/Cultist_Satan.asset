@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Cultist_Satan
   m_EditorClassIdentifier: 
   CultistName: 
-  CultistPrize: 20
+  CultistPrize: 1000
   SuspicionLevel: 0
-  CultistLevel: 1
+  CultistLevel: 50
   MinNumberOfSymbols: 1
   MaxNumberOfSymbols: 5
   CultistTime: 10
