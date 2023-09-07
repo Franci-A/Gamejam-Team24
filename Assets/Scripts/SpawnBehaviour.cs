@@ -102,7 +102,7 @@ public class SpawnBehaviour : MonoBehaviour
         {
             finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
         }
-        
+        yield return new WaitUntil(() => true);
 
         for (var counterOfSpawningCultist = 0; counterOfSpawningCultist < finalCultistID.Count; counterOfSpawningCultist++)
         {
