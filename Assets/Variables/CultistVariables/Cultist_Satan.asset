@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7e87afabed83e4cb0432547f83f062, type: 3}
   m_Name: Cultist_Satan
   m_EditorClassIdentifier: 
-  CultistName: 
+  CultistName: Satan
   CultistPrize: 1000
   SuspicionLevel: 0
   CultistLevel: 50
