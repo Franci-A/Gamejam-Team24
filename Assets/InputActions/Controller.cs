@@ -251,6 +251,235 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""AMcontrolsArcade"",
+            ""id"": ""168938e5-e212-4b41-a861-6ea065402dbd"",
+            ""actions"": [
+                {
+                    ""name"": ""GoldButtons"",
+                    ""type"": ""Button"",
+                    ""id"": ""a6bc59ca-d1e6-4a5e-b615-25f24fb354d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Symbols"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce5eaa61-486e-4146-b112-8d99a15969a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SquareButtons"",
+                    ""type"": ""Button"",
+                    ""id"": ""f80dc660-2e8f-4f9c-9445-7a48504a9aa5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AddCoinsButtons"",
+                    ""type"": ""Button"",
+                    ""id"": ""07773fa4-c639-4309-9ed5-61169e247819"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""type"": ""Button"",
+                    ""id"": ""2a71c240-bddd-4ac7-a4a7-5afa64150561"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""288ad02b-89d6-4060-97ca-1e766aa46172"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GoldButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d19033e5-04fa-4fdc-ba36-99fd9ea33958"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""GoldButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1781dfd-dd63-4cf1-a933-5cabe773163f"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Symbols"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4c6b373-c94f-489d-8e26-4f01b3bd0f58"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""Symbols"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2892c88-88c9-4c5f-8d6f-3c3b74a25ad1"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": """",
+                    ""action"": ""Symbols"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8a78b170-6df9-4936-86b8-b22c0be202c7"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": """",
+                    ""action"": ""Symbols"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6797797c-18f3-40f5-a67f-cb5af807829d"",
+                    ""path"": ""<Keyboard>/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SquareButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58856b42-187d-462f-b6cf-f14cc86f65cf"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""SquareButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bfa65401-1c77-42ad-93fe-446a7a5e2bb6"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": """",
+                    ""action"": ""SquareButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""116c3e04-e272-4ac5-93ce-3313f0b5bf9d"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": """",
+                    ""action"": ""SquareButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ec379d4-ab34-42e0-8714-27ddbb84b1c4"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AddCoinsButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35d2d571-1a95-4178-a445-48a056bd71da"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""AddCoinsButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b30ee0b9-341f-416c-b497-5c12a9decd10"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f286264-8e30-4cc0-86ca-ffcef09293a1"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5552fbd7-97b4-4215-b22e-09457ee8aa10"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e081ab76-25e6-4b74-b324-9977707a2074"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -262,6 +491,13 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         m_AMcontrols_SquareButtons = m_AMcontrols.FindAction("SquareButtons", throwIfNotFound: true);
         m_AMcontrols_AddCoinsButtons = m_AMcontrols.FindAction("AddCoinsButtons", throwIfNotFound: true);
         m_AMcontrols_Joystick = m_AMcontrols.FindAction("Joystick", throwIfNotFound: true);
+        // AMcontrolsArcade
+        m_AMcontrolsArcade = asset.FindActionMap("AMcontrolsArcade", throwIfNotFound: true);
+        m_AMcontrolsArcade_GoldButtons = m_AMcontrolsArcade.FindAction("GoldButtons", throwIfNotFound: true);
+        m_AMcontrolsArcade_Symbols = m_AMcontrolsArcade.FindAction("Symbols", throwIfNotFound: true);
+        m_AMcontrolsArcade_SquareButtons = m_AMcontrolsArcade.FindAction("SquareButtons", throwIfNotFound: true);
+        m_AMcontrolsArcade_AddCoinsButtons = m_AMcontrolsArcade.FindAction("AddCoinsButtons", throwIfNotFound: true);
+        m_AMcontrolsArcade_Joystick = m_AMcontrolsArcade.FindAction("Joystick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -397,7 +633,93 @@ public partial class @Controller: IInputActionCollection2, IDisposable
         }
     }
     public AMcontrolsActions @AMcontrols => new AMcontrolsActions(this);
+
+    // AMcontrolsArcade
+    private readonly InputActionMap m_AMcontrolsArcade;
+    private List<IAMcontrolsArcadeActions> m_AMcontrolsArcadeActionsCallbackInterfaces = new List<IAMcontrolsArcadeActions>();
+    private readonly InputAction m_AMcontrolsArcade_GoldButtons;
+    private readonly InputAction m_AMcontrolsArcade_Symbols;
+    private readonly InputAction m_AMcontrolsArcade_SquareButtons;
+    private readonly InputAction m_AMcontrolsArcade_AddCoinsButtons;
+    private readonly InputAction m_AMcontrolsArcade_Joystick;
+    public struct AMcontrolsArcadeActions
+    {
+        private @Controller m_Wrapper;
+        public AMcontrolsArcadeActions(@Controller wrapper) { m_Wrapper = wrapper; }
+        public InputAction @GoldButtons => m_Wrapper.m_AMcontrolsArcade_GoldButtons;
+        public InputAction @Symbols => m_Wrapper.m_AMcontrolsArcade_Symbols;
+        public InputAction @SquareButtons => m_Wrapper.m_AMcontrolsArcade_SquareButtons;
+        public InputAction @AddCoinsButtons => m_Wrapper.m_AMcontrolsArcade_AddCoinsButtons;
+        public InputAction @Joystick => m_Wrapper.m_AMcontrolsArcade_Joystick;
+        public InputActionMap Get() { return m_Wrapper.m_AMcontrolsArcade; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(AMcontrolsArcadeActions set) { return set.Get(); }
+        public void AddCallbacks(IAMcontrolsArcadeActions instance)
+        {
+            if (instance == null || m_Wrapper.m_AMcontrolsArcadeActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AMcontrolsArcadeActionsCallbackInterfaces.Add(instance);
+            @GoldButtons.started += instance.OnGoldButtons;
+            @GoldButtons.performed += instance.OnGoldButtons;
+            @GoldButtons.canceled += instance.OnGoldButtons;
+            @Symbols.started += instance.OnSymbols;
+            @Symbols.performed += instance.OnSymbols;
+            @Symbols.canceled += instance.OnSymbols;
+            @SquareButtons.started += instance.OnSquareButtons;
+            @SquareButtons.performed += instance.OnSquareButtons;
+            @SquareButtons.canceled += instance.OnSquareButtons;
+            @AddCoinsButtons.started += instance.OnAddCoinsButtons;
+            @AddCoinsButtons.performed += instance.OnAddCoinsButtons;
+            @AddCoinsButtons.canceled += instance.OnAddCoinsButtons;
+            @Joystick.started += instance.OnJoystick;
+            @Joystick.performed += instance.OnJoystick;
+            @Joystick.canceled += instance.OnJoystick;
+        }
+
+        private void UnregisterCallbacks(IAMcontrolsArcadeActions instance)
+        {
+            @GoldButtons.started -= instance.OnGoldButtons;
+            @GoldButtons.performed -= instance.OnGoldButtons;
+            @GoldButtons.canceled -= instance.OnGoldButtons;
+            @Symbols.started -= instance.OnSymbols;
+            @Symbols.performed -= instance.OnSymbols;
+            @Symbols.canceled -= instance.OnSymbols;
+            @SquareButtons.started -= instance.OnSquareButtons;
+            @SquareButtons.performed -= instance.OnSquareButtons;
+            @SquareButtons.canceled -= instance.OnSquareButtons;
+            @AddCoinsButtons.started -= instance.OnAddCoinsButtons;
+            @AddCoinsButtons.performed -= instance.OnAddCoinsButtons;
+            @AddCoinsButtons.canceled -= instance.OnAddCoinsButtons;
+            @Joystick.started -= instance.OnJoystick;
+            @Joystick.performed -= instance.OnJoystick;
+            @Joystick.canceled -= instance.OnJoystick;
+        }
+
+        public void RemoveCallbacks(IAMcontrolsArcadeActions instance)
+        {
+            if (m_Wrapper.m_AMcontrolsArcadeActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IAMcontrolsArcadeActions instance)
+        {
+            foreach (var item in m_Wrapper.m_AMcontrolsArcadeActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_AMcontrolsArcadeActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public AMcontrolsArcadeActions @AMcontrolsArcade => new AMcontrolsArcadeActions(this);
     public interface IAMcontrolsActions
+    {
+        void OnGoldButtons(InputAction.CallbackContext context);
+        void OnSymbols(InputAction.CallbackContext context);
+        void OnSquareButtons(InputAction.CallbackContext context);
+        void OnAddCoinsButtons(InputAction.CallbackContext context);
+        void OnJoystick(InputAction.CallbackContext context);
+    }
+    public interface IAMcontrolsArcadeActions
     {
         void OnGoldButtons(InputAction.CallbackContext context);
         void OnSymbols(InputAction.CallbackContext context);

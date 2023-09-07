@@ -287,6 +287,7 @@ MonoBehaviour:
   _movementSpeed: 5
   lostCultist: {fileID: 11400000, guid: 98117135f03952644bd7d91fb068d492, type: 2}
   joinedCultist: {fileID: 11400000, guid: 36e1201bdb8015940a73ef4ec310da34, type: 2}
+  _arcadeControls: 1
   sacrificeEvent: {fileID: 11400000, guid: 024b91f91e7379e47987c68eba4d65f1, type: 2}
 --- !u!4 &207235405
 Transform:
@@ -444,7 +445,6 @@ GameObject:
   - component: {fileID: 730614484}
   - component: {fileID: 730614483}
   - component: {fileID: 730614482}
-  - component: {fileID: 730614485}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -887,7 +887,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.97348, y: 0.97348, z: 0.97348}
+  m_LocalScale: {x: -0.8803667, y: 0.93905777, z: 0.93905777}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1137,6 +1137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fd687f95a5b044dbd413ff6de05942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shouldSpawn: 0
+  _CultistsGMref: []
 --- !u!1 &1648185775
 GameObject:
   m_ObjectHideFlags: 0

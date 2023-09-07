@@ -12,13 +12,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform[] _movementSlotsTransform;
     [SerializeField] Transform _playerTransform;
     [SerializeField] float _movementSpeed;
-    private Controller _ControllerClass;
+    public Controller _ControllerClass;
     private Controls _Buttons;
     private CultistController CollidedCultist;
     private int _lastPlayerIndex  = 0;
 
     [SerializeField] private GameObjectEvent lostCultist;
     [SerializeField] private GameObjectEvent joinedCultist;
+    [SerializeField] bool _arcadeControls;
 
     private void Start()
     {
@@ -67,11 +68,22 @@ public class PlayerMovement : MonoBehaviour
         _ControllerClass = new Controller();
         _Buttons = new Controls();
         #region Assign Inputs
-        _Buttons.m_Moves = _ControllerClass.AMcontrols.SquareButtons;
-        _Buttons.m_Symbols = _ControllerClass.AMcontrols.Symbols;
-        _Buttons.m_GoldButtons = _ControllerClass.AMcontrols.GoldButtons;
-        _Buttons.m_AddCoinsButton = _ControllerClass.AMcontrols.AddCoinsButtons;
-        _Buttons.m_Joystick = _ControllerClass.AMcontrols.Joystick;
+        if (!_arcadeControls)
+        {
+            _Buttons.m_Moves = _ControllerClass.AMcontrols.SquareButtons;
+            _Buttons.m_Symbols = _ControllerClass.AMcontrols.Symbols;
+            _Buttons.m_GoldButtons = _ControllerClass.AMcontrols.GoldButtons;
+            _Buttons.m_AddCoinsButton = _ControllerClass.AMcontrols.AddCoinsButtons;
+            _Buttons.m_Joystick = _ControllerClass.AMcontrols.Joystick;
+        }
+        else
+        {
+            _Buttons.m_Moves = _ControllerClass.AMcontrolsArcade.SquareButtons;
+            _Buttons.m_Symbols = _ControllerClass.AMcontrolsArcade.Symbols;
+            _Buttons.m_GoldButtons = _ControllerClass.AMcontrolsArcade.GoldButtons;
+            _Buttons.m_AddCoinsButton = _ControllerClass.AMcontrolsArcade.AddCoinsButtons;
+            _Buttons.m_Joystick = _ControllerClass.AMcontrolsArcade.Joystick;
+        }
         #endregion
     }
     
