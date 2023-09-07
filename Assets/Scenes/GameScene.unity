@@ -338,12 +338,14 @@ MonoBehaviour:
   - {fileID: 150215769}
   - {fileID: 753819103}
   - {fileID: 1005957114}
-  spawnWaitTimeMin: 2
-  spawnWaitTimeMax: 5
+  spawnWaitTimeMin: 3
+  spawnWaitTimeMax: 4
   circleRadius: 0.5
   cultistMask:
     serializedVersion: 2
     m_Bits: 64
+  minNumberOfSpawn: 3
+  maxNumberOfSpawn: 5
   cultistDisplacementPosition: 0.5
   cultistPrefab: {fileID: 8581349374312404868, guid: e94cc483550111046b8eb26b23ce06cf, type: 3}
   _WavePresets:
