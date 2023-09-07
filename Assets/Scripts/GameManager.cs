@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> _CultistsGMref = new List<GameObject>();
     [SerializeField] private GameObjectEvent gameOverEvent;
     PlayerMovement player;
+    SpawnBehaviour spawnBehaviour;
 
     private void Awake()
     {
@@ -24,10 +25,18 @@ public class GameManager : MonoBehaviour
 
         gameOverEvent.scriptableEvent.AddListener(GameOver);
         player = FindObjectOfType<PlayerMovement>();
+        spawnBehaviour = FindObjectOfType<SpawnBehaviour>();
     }
 
     private void GameOver(object obj)
     {
+        player.enabled = false;
+        spawnBehaviour.StopAllCoroutines();
+        CultistController[] allCultist = FindObjectsOfType<CultistController>();
+        for (int i = 0; i < allCultist.Length; i++)
+        {
+            Destroy(allCultist[i].gameObject);
+        }
         SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
     }
 }

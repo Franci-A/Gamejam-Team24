@@ -14,6 +14,7 @@ public class SuspicionBar : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private SuspicionValues values;
     private float timer = 0;
+    private bool isGameover = false;
 
     private void Start()
     {
@@ -40,8 +41,9 @@ public class SuspicionBar : MonoBehaviour
     private void UpdateSlider()
     {
         slider.value = currentValue / totalValue;
-        if (currentValue >= totalValue)
+        if (currentValue >= totalValue && !isGameover)
         {
+            isGameover = true;
             gameOver.scriptableEvent.Invoke(null);
         }
     }
