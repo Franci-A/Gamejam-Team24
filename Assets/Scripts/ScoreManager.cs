@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float currentScore;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private GameObjectEvent addScoreEvent;
+    [SerializeField] private FloatScriptable scoreMultiplier;
+
+    private void Start()
     {
-        
+        currentScore = 0;
+        addScoreEvent.scriptableEvent.AddListener(AddScore);
+        UpdateScore();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddScore(object obj)
     {
-        
+        currentScore += (float)obj * scoreMultiplier.Value;
+        UpdateScore();
+    }
+
+    private void UpdateScore()
+    {
+        scoreText.text = currentScore.ToString();
     }
 }

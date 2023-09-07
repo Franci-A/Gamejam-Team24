@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce7e87afabed83e4cb0432547f83f062, type: 3}
-  m_Name: Cultist4
+  m_Name: Cultist_Pauvre
   m_EditorClassIdentifier: 
   CultistName: 
   CultistPrize: 20
   SuspicionLevel: 0
   CultistLevel: 1
   MinNumberOfSymbols: 1
-  MaxNumberOfSymbols: 5
+  MaxNumberOfSymbols: 2
   CultistTime: 10

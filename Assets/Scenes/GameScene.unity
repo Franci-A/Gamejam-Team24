@@ -305,8 +305,8 @@ MonoBehaviour:
   spawnArray:
   - {fileID: 953154191}
   - {fileID: 1995039678}
-  spawnWaitTimeMin: 1
-  spawnWaitTimeMax: 2
+  spawnWaitTimeMin: 2
+  spawnWaitTimeMax: 5
   circleRadius: 0.5
   cultistMask:
     serializedVersion: 2
@@ -569,46 +569,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2062671343071082742, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2062671343071082742, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_Color.g
-      value: 0.20592578
-      objectReference: {fileID: 0}
-    - target: {fileID: 2062671343071082742, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_Color.r
-      value: 0.07843137
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.91389585
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.95710194
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.8512293
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.1999512
-      objectReference: {fileID: 0}
-    - target: {fileID: 2778167207212391615, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.9741211
-      objectReference: {fileID: 0}
     - target: {fileID: 3929916910311151179, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
