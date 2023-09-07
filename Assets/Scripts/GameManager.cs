@@ -26,6 +26,13 @@ public class GameManager : MonoBehaviour
         gameOverEvent.scriptableEvent.AddListener(GameOver);
         player = FindObjectOfType<PlayerMovement>();
         spawnBehaviour = FindObjectOfType<SpawnBehaviour>();
+        StartCoroutine(StartWaves());
+    }
+
+    IEnumerator StartWaves()
+    {
+        yield return new WaitForSecondsRealtime(6);
+        spawnBehaviour.Init();
     }
 
     private void GameOver(object obj)

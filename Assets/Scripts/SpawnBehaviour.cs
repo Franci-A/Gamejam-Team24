@@ -32,8 +32,7 @@ public class SpawnBehaviour : MonoBehaviour
 
     public List<WavePreset> _WavePresets;
 
-
-    void Start()
+    public void Init()
     {
         Debug.Log(spawnArray);
         numberOfSpawn = Random.Range(minNumberOfSpawn, maxNumberOfSpawn);
