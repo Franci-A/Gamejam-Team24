@@ -54,7 +54,6 @@ public class CultistController : MonoBehaviour
     public void Init(int cultistID)
     {
         ID = cultistID;
-        nameCultist = _CultistPresets[cultistID].CultistName;
         totalPrize = _CultistPresets[cultistID].CultistPrize;
         cultistValue = _CultistPresets[cultistID].CultistLevel;
         suspicionValue = _CultistPresets[cultistID].SuspicionLevel;
@@ -241,7 +240,7 @@ public class CultistController : MonoBehaviour
         Debug.Log("Failed");
         isInDialog = false;
         SHouldImpareSatanMovements = false;
-        this.tag = "";
+        this.tag = "NotEnnemy";
         canvasParent.SetActive(false);
         lostEvent?.scriptableEvent.Invoke(cultistValue);
         if (animator!=null)animator.SetBool("IsWalking", true);
