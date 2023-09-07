@@ -7,9 +7,11 @@ using UnityEngine.XR;
 
 public class CultistController : MonoBehaviour
 {
-    private float baseSpeed = 1;
-    [SerializeField] private Vector3 direction = new Vector3(0, 0 , -1);
+    [HideInInspector]
+    public float baseSpeed = 1;
+    [SerializeField] public Vector3 direction = new Vector3(0, 0 , -1);
     private float timer = 0;
+    private bool SHouldImpareSatanMovements = false;
     [SerializeField] private GameObject canvasParent;
     [SerializeField] private Image timerImage;
     [SerializeField] private Animator animator;
@@ -30,6 +32,8 @@ public class CultistController : MonoBehaviour
     [SerializeField] private Sprite[] iconSprites;
     private int[] iconsList;
     private List<Image> iconsImages = new List<Image>();
+    [HideInInspector]
+    public int ID;
 
     [Header("Events")]
     [SerializeField] private GameObjectEvent lostEvent;
@@ -48,13 +52,15 @@ public class CultistController : MonoBehaviour
 
     public void Init(int cultistID)
     {
+        ID = cultistID;
         nameCultist = _CultistPresets[cultistID].CultistName;
         totalPrize = _CultistPresets[cultistID].CultistPrize;
         cultistValue = _CultistPresets[cultistID].CultistLevel;
         suspicionValue = _CultistPresets[cultistID].SuspicionLevel;
         cultistTimer = _CultistPresets[cultistID].CultistTime;
 
-        totalInputs = Random.Range(_CultistPresets[cultistID].MinNumberOfSymbols, _CultistPresets[cultistID].MaxNumberOfSymbols);
+        if (ID != 4) totalInputs = Random.Range(_CultistPresets[cultistID].MinNumberOfSymbols, _CultistPresets[cultistID].MaxNumberOfSymbols);
+        else totalInputs = gameManager.SatansWaves[gameManager.SatanLive];
         iconsList = new int[totalInputs];
         indexLeft = totalInputs - 1;
         for (int i = totalInputs; i > 0; i--)
@@ -77,8 +83,12 @@ public class CultistController : MonoBehaviour
         animator.SetBool("IsWalking", true);
         
         animator.SetFloat("Index", (float)cultistID);
-        //if (cultistID != 4) gameManager._CultistsGMref.Add(this.gameObject);
-        //else gameObject.AddComponent<SatanController>();
+        if (ID != 4) gameManager._CultistsGMref.Add(this.gameObject);
+        else
+        {
+            gameObject.AddComponent<SatanController>();
+            SHouldImpareSatanMovements = true;
+        }
         isActive = true;
     }
 
@@ -132,7 +142,6 @@ public class CultistController : MonoBehaviour
                 {
                     direction = Vector2.zero;
                 }*/
-
                 direction = new Vector3(Mathf.Sign(dis.x) * -1, -1, 0).normalized;
 
                 hasHit = true;
@@ -141,7 +150,7 @@ public class CultistController : MonoBehaviour
 
         if (!hasHit)
         {
-            direction = new Vector3(0, -1, 0);
+            if(!SHouldImpareSatanMovements) direction = new Vector3(0, -1, 0);
         }
         transform.position += direction * baseSpeed * Time.deltaTime;
     }
@@ -169,8 +178,25 @@ public class CultistController : MonoBehaviour
 
             if (indexLeft < 0)
             {
-                DialogFinished();
-                return false;
+                if(ID == 4)
+                {
+                    if(gameManager.SatanLive == gameManager.SatansWaves.Count - 1)
+                    {
+                        DialogFinished();
+                        return false;
+                    }
+                    else
+                    {
+                        StartCoroutine(AngrySatan());
+                    }
+                    return false;
+                }
+                else
+                {
+                    DialogFinished();
+                    return false;
+                }
+                
             }
             else 
             {
@@ -201,26 +227,46 @@ public class CultistController : MonoBehaviour
         isDialogDone = true;
     }
 
+    IEnumerator AngrySatan()
+    {
+        SoundManager.instance.PlayClip("AngrySatan");
+        yield return new WaitForSeconds(1);
+        gameManager.SatanLive++;
+        this.Init(4);
+        StartDialog();
+        currentInput = 0;
+    }
     public void FailedDialog()
     {
         Debug.Log("Failed");
         isInDialog = false;
-        Destroy(this.gameObject.GetComponent<Collider2D>());
+        SHouldImpareSatanMovements = false;
+        this.tag = "";
         canvasParent.SetActive(false);
         lostEvent?.scriptableEvent.Invoke(cultistValue);
         if (animator!=null)animator.SetBool("IsWalking", true);
         SoundManager.instance.PlayClip("FailAdept");
         isDialogDone = true;
+        if (ID == 4)
+        {
+            gameManager._shouldSpawn = true;
+            gameManager.SatanLive = 0;
+            gameManager.GlobalVolume?.SetBool("DiableHere", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("EndZone"))
         {
+            
             Destroy(this.gameObject);
         }
     }
-
+    private void OnDestroy()
+    {
+        gameManager._CultistsGMref.Remove(this.gameObject);
+    }
 
     private void OnDrawGizmos()
     {

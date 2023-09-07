@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a1f7ca9e3490b498a070e3bd318948, type: 3}
   m_Name: Wave2
   m_EditorClassIdentifier: 
-  numberOfCultistsEachWaves: 0
-  typePauvreRate: 40
-  typeRicheRate: 40
-  typePoliceRate: 40
-  typeJokerRate: 40
-  typeSatanRate: 0
+  numberOfCultistsEachWaves: 1
+  typePauvreRate: 0
+  typeRicheRate: 0
+  typePoliceRate: 0
+  typeJokerRate: 0
+  typeSatanRate: 100

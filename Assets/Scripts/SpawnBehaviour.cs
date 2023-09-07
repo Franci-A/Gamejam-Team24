@@ -32,7 +32,7 @@ public class SpawnBehaviour : MonoBehaviour
     void Start()
     {
         Debug.Log(spawnArray);
-        numberOfSpawn = Random.Range(minNumberOfSpawn, maxNumberOfSpawn);
+        numberOfSpawn = _WavePresets[0].numberOfCultistsEachWaves;
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
     }
 
@@ -75,7 +75,7 @@ public class SpawnBehaviour : MonoBehaviour
         spawnCount += 1;
         if (spawnCount == numberOfSpawn)
         {
-            numberOfSpawn = Random.Range(minNumberOfSpawn, maxNumberOfSpawn);
+            numberOfSpawn = _WavePresets[waveCount+1].numberOfCultistsEachWaves;
             spawnCount = 0;
             waveCount += 1;
             Debug.Log("NOMBRE DE WAVE");
@@ -95,15 +95,15 @@ public class SpawnBehaviour : MonoBehaviour
         {
             randomWaveID = waveCount;
         }
-        randomNumberOfCultists = Random.Range(1, 5);
+        if (cultistPrefab.ID == 4) randomNumberOfCultists = 1;
+        else randomNumberOfCultists = Random.Range(1, 5);
 
         List<int> finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
         while(finalCultistID.Count == 0)
         {
             finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
         }
-        yield return new WaitUntil(() => true);
-
+        yield return new WaitUntil(() => GameManager.Instance._shouldSpawn);
         for (var counterOfSpawningCultist = 0; counterOfSpawningCultist < finalCultistID.Count; counterOfSpawningCultist++)
         {
             Collider2D cultistColliders;
@@ -121,6 +121,7 @@ public class SpawnBehaviour : MonoBehaviour
         spawnWaitTime = Random.Range(spawnWaitTimeMin, spawnWaitTimeMax);
         yield return new WaitForSeconds(spawnWaitTime);
         CultistSpawn();
+        
     }
 
     private void OnDrawGizmos()

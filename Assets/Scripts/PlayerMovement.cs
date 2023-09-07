@@ -116,12 +116,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CollidedCultist == null)
             return;
+        if (CollidedCultist.ID!=2)
         CollidedCultist.CorrectInput((int)context.ReadValue<float>() - 1);
 
     }
     private void AddCoins(InputAction.CallbackContext context)
     {
-        //AddCoins
+        if (CollidedCultist.ID != 2)
+            CollidedCultist.CorrectInput((int)context.ReadValue<float>() - 1);
     }
     private void GoldButtons(InputAction.CallbackContext context)
     {
