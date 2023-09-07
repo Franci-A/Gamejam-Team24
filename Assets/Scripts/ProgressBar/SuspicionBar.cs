@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SuspicionBar : MonoBehaviour
 {
     [SerializeField] private GameObjectEvent failedCultist;
+    [SerializeField] private GameObjectEvent cultistSacrifice;
     private float currentValue;
     [SerializeField] private float totalValue = 100;
 
@@ -16,6 +17,7 @@ public class SuspicionBar : MonoBehaviour
     private void Start()
     {
         failedCultist.scriptableEvent.AddListener(AddSuspicion);
+        cultistSacrifice.scriptableEvent.AddListener(Sacrifice);
         if(slider == null) slider = GetComponentInChildren<Slider>();
         currentValue = 0;
         UpdateSlider();
@@ -41,6 +43,14 @@ public class SuspicionBar : MonoBehaviour
         {
             //Debug.Log("game over");
         }
+    }
+
+    public void Sacrifice(object obj) //80% pour 100cult
+    {
+        float amount = (float)obj;
+        currentValue -= Mathf.Lerp(0,80, amount / 100f);
+        currentValue = Mathf.Clamp(currentValue, 0, 100);
+        UpdateSlider();
     }
 
     private void OnDestroy()
