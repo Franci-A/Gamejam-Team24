@@ -345,10 +345,12 @@ MonoBehaviour:
   cultistMask:
     serializedVersion: 2
     m_Bits: 64
+  waveCount: 0
   minNumberOfSpawn: 3
   maxNumberOfSpawn: 5
   cultistDisplacementPosition: 0.5
   cultistPrefab: {fileID: 8581349374312404868, guid: e94cc483550111046b8eb26b23ce06cf, type: 3}
+  scoreScript: {fileID: 1861766395}
   _WavePresets:
   - {fileID: 11400000, guid: ba36251ad383a5a479d48ed8b32c72a6, type: 2}
   - {fileID: 11400000, guid: c0a6ec02ae611fb4cb1b80631e177e7d, type: 2}
@@ -1267,6 +1269,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 230167379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1861766395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5903019688347357887, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
+  m_PrefabInstance: {fileID: 769761226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364a6a22084e83c4db14d1ab86cef532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1878408718
 GameObject:
   m_ObjectHideFlags: 0
