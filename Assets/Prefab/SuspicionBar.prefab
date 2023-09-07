@@ -534,6 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cultistJoined: {fileID: 11400000, guid: 36e1201bdb8015940a73ef4ec310da34, type: 2}
   cultistSacrifice: {fileID: 11400000, guid: 024b91f91e7379e47987c68eba4d65f1, type: 2}
+  reduceSuspicion: {fileID: 11400000, guid: 062c3ecd384cf4540ba03fe6abf237bf, type: 2}
   totalValue: 100
   slider: {fileID: 6116888966591056232}
   scores:
@@ -904,6 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   failedCultist: {fileID: 11400000, guid: 98117135f03952644bd7d91fb068d492, type: 2}
+  cultistSacrifice: {fileID: 11400000, guid: 062c3ecd384cf4540ba03fe6abf237bf, type: 2}
   totalValue: 100
   slider: {fileID: 7460689861743605375}
   values: {fileID: 11400000, guid: 93363732b3fa84e4fa84a8a3336539ae, type: 2}
