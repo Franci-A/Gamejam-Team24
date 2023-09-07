@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private float currentScore;
+    [SerializeField] public float currentScore;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObjectEvent addScoreEvent;
     [SerializeField] private FloatScriptable scoreMultiplier;
