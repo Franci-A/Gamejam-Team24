@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 6883388983745997141}
   - component: {fileID: 8095618029636120021}
   - component: {fileID: 6304657302345707796}
+  - component: {fileID: 5479647182055985407}
   m_Layer: 6
   m_Name: Renderer
   m_TagString: Untagged
@@ -348,7 +349,7 @@ Animator:
   m_GameObject: {fileID: 3682543324874281969}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f14fc89d51c73e48a990ea42f8185db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -359,6 +360,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5479647182055985407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682543324874281969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2fbdfedd29282428bea1e9e9cef67f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5311840529157558764
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +384,6 @@ GameObject:
   - component: {fileID: 8581349374312404868}
   - component: {fileID: 1984998757542417221}
   - component: {fileID: 1238087551006028487}
-  - component: {fileID: 432689910097223626}
   m_Layer: 6
   m_Name: Cultist
   m_TagString: Ennemy
@@ -412,7 +424,7 @@ MonoBehaviour:
   direction: {x: 0, y: -1, z: 0}
   canvasParent: {fileID: 2086377453925324701}
   timerImage: {fileID: 4601204039866639785}
-  animator: {fileID: 432689910097223626}
+  animator: {fileID: 6304657302345707796}
   isInDialog: 0
   iconInstance: {fileID: 8568934356106054873}
   iconSprites:
@@ -464,9 +476,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 2.5}
+    newSize: {x: 3, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -501,24 +513,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &432689910097223626
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5311840529157558764}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f14fc89d51c73e48a990ea42f8185db, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

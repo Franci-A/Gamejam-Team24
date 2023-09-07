@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,7 @@ public class CultistController : MonoBehaviour
         canvasParent.SetActive(false);
         if(animator == null) animator = GetComponent<Animator>();
         animator.SetBool("IsWalking", true);
+        animator.SetFloat("Index", (float)randomCultist);
     }
 
     void Update()
@@ -110,7 +112,6 @@ public class CultistController : MonoBehaviour
             if (totalInputs <= 0)
             {
                 DialogFinished();
-                SoundManager.instance.PlayClip("WinAdept");
                 return false;
             }
             else 
@@ -130,11 +131,11 @@ public class CultistController : MonoBehaviour
     public void DialogFinished()
     {
         Debug.Log("All inputs done");
-        isInDialog = false;
         canvasParent.SetActive(false);
+        SoundManager.instance.PlayClip("WinAdept");
         Destroy(this.gameObject.GetComponent<Collider2D>());
+        animator.SetTrigger("Transform");
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
-        animator.SetBool("IsWalking", true);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
     }
 
@@ -145,7 +146,7 @@ public class CultistController : MonoBehaviour
         Destroy(this.gameObject.GetComponent<Collider2D>());
         canvasParent.SetActive(false);
         lostEvent?.scriptableEvent.Invoke(cultistValue);
-        animator.SetBool("IsWalking", true);
+        if (animator!=null)animator.SetBool("IsWalking", true);
         SoundManager.instance.PlayClip("FailAdept");
     }
 
