@@ -76,10 +76,10 @@ public class CultistController : MonoBehaviour
         if(animator == null) animator = GetComponent<Animator>();
         animator.SetBool("IsWalking", true);
         
-        isActive = true;
         animator.SetFloat("Index", (float)cultistID);
         if (cultistID != 4) gameManager._CultistsGMref.Add(this.gameObject);
         else gameObject.AddComponent<SatanController>();
+        isActive = true;
     }
 
     void Update()
@@ -101,7 +101,7 @@ public class CultistController : MonoBehaviour
             }
         }
     }
-    void Start()
+    void Awake()
     {
         gameManager = GameManager.Instance;
     }

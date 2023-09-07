@@ -125,7 +125,7 @@ public class SpawnBehaviour : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(cultistPosition, circleRadius);
+        //Gizmos.DrawSphere(cultistPosition, circleRadius);
     }
 
     private void OnDestroy()

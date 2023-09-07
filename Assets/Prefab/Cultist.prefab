@@ -349,6 +349,7 @@ MonoBehaviour:
   timerImage: {fileID: 4601204039866639785}
   animator: {fileID: 6304657302345707796}
   isInDialog: 0
+  isDialogDone: 0
   nameCultist: 
   iconPrefab: {fileID: 4850085435251519657, guid: 6d59ad041c0aeb6419f77bd487637bc4, type: 3}
   iconSprites:
