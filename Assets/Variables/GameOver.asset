@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7e87afabed83e4cb0432547f83f062, type: 3}
-  m_Name: Cultist_Police
+  m_Script: {fileID: 11500000, guid: 58da0d934f58e3446989645f20bbcc0e, type: 3}
+  m_Name: GameOver
   m_EditorClassIdentifier: 
-  CultistName: Police
-  CultistPrize: -25
-  SuspicionLevel: -10
-  CultistLevel: 1
-  MinNumberOfSymbols: 1
-  MaxNumberOfSymbols: 1
-  CultistTime: 10
-  MinSpeed: 0.8
-  MaxSpeed: 2.2
+  scriptableEvent:
+    m_PersistentCalls:
+      m_Calls: []

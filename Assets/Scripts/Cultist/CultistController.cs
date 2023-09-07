@@ -20,8 +20,8 @@ public class CultistController : MonoBehaviour
     private int currentInput;
     private int indexLeft;
 
+    public int cultistId;
     private float totalPrize;
-    public string nameCultist;
     private int totalInputs;
     private float cultistValue;
     private float suspicionValue;
@@ -29,6 +29,7 @@ public class CultistController : MonoBehaviour
     private GameManager gameManager;
 
     [SerializeField] private Image iconPrefab;
+    [SerializeField] private RectTransform iconParent;
     [SerializeField] private Sprite[] iconSprites;
     private int[] iconsList;
     private List<Image> iconsImages = new List<Image>();
@@ -63,12 +64,23 @@ public class CultistController : MonoBehaviour
         else totalInputs = gameManager.SatansWaves[gameManager.SatanLive];
         iconsList = new int[totalInputs];
         indexLeft = totalInputs - 1;
-        for (int i = totalInputs; i > 0; i--)
+        for (int i = totalInputs-1; i >= 0; i--)
         {
-            Image icon = Instantiate<Image>(iconPrefab, canvasParent.transform);
+            Image icon = Instantiate<Image>(iconPrefab, iconParent.transform);
             icon.rectTransform.DOLocalMoveY(-10 * i, .1f);
             int symbol = Random.Range(0, 4);
-            iconsList[i -1] = symbol;
+            if (cultistId == 3)
+            {
+                if(i == 0)
+                {
+                    symbol = Random.Range(4, 6);
+                }
+                else
+                {
+                    symbol = Random.Range(0, 6);
+                }
+            }
+            iconsList[i] = symbol;
             icon.sprite = iconSprites[symbol];
             iconsImages.Add(icon);
         }
@@ -124,24 +136,8 @@ public class CultistController : MonoBehaviour
         {
             if (hit[i].collider.gameObject != gameObject)
             {
-
                 Vector2 dis = hit[i].collider.transform.position - transform.position;
-                /*RaycastHit2D[] hitsRight = Physics2D.CircleCastAll(transform.position + new Vector3(1.5f, -1, 0) * lookInfrontDistance, .2f, Vector2.down, 1f, enemyMask);
-                RaycastHit2D[] hitsLeft = Physics2D.CircleCastAll(transform.position + new Vector3(-1.5f, -1, 0) * lookInfrontDistance, .2f , Vector2.down,  1f, enemyMask);
-                Debug.DrawLine(transform.position, transform.position + new Vector3(-1.5f, -1, 0) * lookInfrontDistance, Color.green);
-                if (hitsRight.Length == 0)
-                {
-                    direction = new Vector3(1, -1, 0).normalized;
 
-                }
-                else if (hitsLeft.Length == 0) 
-                {
-                    direction = new Vector3(-1, -1, 0).normalized;
-                }
-                else
-                {
-                    direction = Vector2.zero;
-                }*/
                 direction = new Vector3(Mathf.Sign(dis.x) * -1, -1, 0).normalized;
 
                 hasHit = true;
@@ -224,6 +220,10 @@ public class CultistController : MonoBehaviour
         animator.SetTrigger("Transform");
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
+        if(cultistId == 2) //policier
+        {
+            lostEvent.scriptableEvent?.Invoke(suspicionValue);
+        }
         isDialogDone = true;
     }
 

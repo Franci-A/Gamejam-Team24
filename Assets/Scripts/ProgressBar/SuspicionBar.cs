@@ -7,12 +7,14 @@ public class SuspicionBar : MonoBehaviour
 {
     [SerializeField] private GameObjectEvent failedCultist;
     [SerializeField] private GameObjectEvent cultistSacrifice;
+    [SerializeField] private GameObjectEvent gameOver;
     private float currentValue;
     [SerializeField] private float totalValue = 100;
 
     [SerializeField] private Slider slider;
     [SerializeField] private SuspicionValues values;
     private float timer = 0;
+    private bool isGameover = false;
 
     private void Start()
     {
@@ -26,22 +28,31 @@ public class SuspicionBar : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        currentValue += values.baseAddValue.Evaluate(timer / values.timeToReachMaxValue);
+        currentValue += values.baseAddValue.Evaluate(timer / values.timeToReachMaxValue) *Time.deltaTime;
         UpdateSlider();
     }
 
     public void AddSuspicion(object obj)
     {
-        currentValue += values.failedInput;
+        if (obj != null)
+        {
+            currentValue += (float)obj;
+        }
+        else
+        {
+            currentValue += values.failedInput;
+        }
+            currentValue = Mathf.Clamp(currentValue, 0,100);
         UpdateSlider();
     }
 
     private void UpdateSlider()
     {
         slider.value = currentValue / totalValue;
-        if (currentValue >= totalValue)
+        if (currentValue >= totalValue && !isGameover)
         {
-            //Debug.Log("game over");
+            isGameover = true;
+            gameOver.scriptableEvent.Invoke(null);
         }
     }
 

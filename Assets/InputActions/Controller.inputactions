@@ -306,7 +306,7 @@
                 {
                     "name": "",
                     "id": "a1781dfd-dd63-4cf1-a933-5cabe773163f",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -317,7 +317,7 @@
                 {
                     "name": "",
                     "id": "c4c6b373-c94f-489d-8e26-4f01b3bd0f58",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button5",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "Scale(factor=2)",
                     "groups": "",
@@ -328,7 +328,7 @@
                 {
                     "name": "",
                     "id": "c2892c88-88c9-4c5f-8d6f-3c3b74a25ad1",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "Scale(factor=3)",
                     "groups": "",
@@ -339,7 +339,7 @@
                 {
                     "name": "",
                     "id": "8a78b170-6df9-4936-86b8-b22c0be202c7",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button4",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "Scale(factor=4)",
                     "groups": "",
@@ -350,7 +350,7 @@
                 {
                     "name": "",
                     "id": "6797797c-18f3-40f5-a67f-cb5af807829d",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button6",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -361,7 +361,7 @@
                 {
                     "name": "",
                     "id": "58856b42-187d-462f-b6cf-f14cc86f65cf",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button7",
+                    "path": "<Keyboard>/g",
                     "interactions": "",
                     "processors": "Scale(factor=2)",
                     "groups": "",
@@ -372,7 +372,7 @@
                 {
                     "name": "",
                     "id": "bfa65401-1c77-42ad-93fe-446a7a5e2bb6",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button8",
+                    "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "Scale(factor=3)",
                     "groups": "",
@@ -383,7 +383,7 @@
                 {
                     "name": "",
                     "id": "116c3e04-e272-4ac5-93ce-3313f0b5bf9d",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button9",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "Scale(factor=4)",
                     "groups": "",
@@ -438,7 +438,7 @@
                 {
                     "name": "",
                     "id": "5552fbd7-97b4-4215-b22e-09457ee8aa10",
-                    "path": "<Joystick>/stick/down",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -122,12 +122,17 @@ public class PlayerMovement : MonoBehaviour
     }
     private void AddCoins(InputAction.CallbackContext context)
     {
-        if (CollidedCultist.ID != 2)
-            CollidedCultist.CorrectInput((int)context.ReadValue<float>() - 1);
+        Debug.Log("add coins");
+        if (CollidedCultist == null)
+            return;
+        CollidedCultist.CorrectInput(5);
     }
     private void GoldButtons(InputAction.CallbackContext context)
     {
-        //Gold Buttons
+        Debug.Log("golden");
+        if (CollidedCultist == null)
+            return;
+        CollidedCultist.CorrectInput(4);
     }
     private void Joystick(InputAction.CallbackContext context)
     {

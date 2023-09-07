@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class GameManager : MonoBehaviour
     public bool _shouldSpawn=true;
     [HideInInspector]
     public List<GameObject> _CultistsGMref;
+    [SerializeField] private GameObjectEvent gameOverEvent;
     public Animator GlobalVolume;
     public List<int> SatansWaves;
     public int SatanLive = 0;
+    PlayerMovement player;
+    SpawnBehaviour spawnBehaviour;
     private void Awake()
     {
         if (Instance != null)
@@ -20,9 +24,32 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        gameOverEvent.scriptableEvent.AddListener(GameOver);
+        player = FindObjectOfType<PlayerMovement>();
+        spawnBehaviour = FindObjectOfType<SpawnBehaviour>();
+        StartCoroutine(StartWaves());
     }
     private void Start()
     {
         _CultistsGMref = new List<GameObject>();
+    }
+
+    IEnumerator StartWaves()
+    {
+        yield return new WaitForSecondsRealtime(6);
+        spawnBehaviour.Init();
+    }
+
+    private void GameOver(object obj)
+    {
+        player.enabled = false;
+        spawnBehaviour.StopAllCoroutines();
+        CultistController[] allCultist = FindObjectsOfType<CultistController>();
+        for (int i = 0; i < allCultist.Length; i++)
+        {
+            Destroy(allCultist[i].gameObject);
+        }
+        SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
     }
 }
