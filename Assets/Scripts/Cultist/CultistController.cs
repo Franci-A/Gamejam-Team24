@@ -77,7 +77,7 @@ public class CultistController : MonoBehaviour
         animator.SetBool("IsWalking", true);
         
         animator.SetFloat("Index", (float)cultistID);
-        if (cultistID != 4) gameManager._CultistsGMref.Add(this.gameObject);
+        //if (cultistID != 4) gameManager._CultistsGMref.Add(this.gameObject);
         else gameObject.AddComponent<SatanController>();
         isActive = true;
     }
