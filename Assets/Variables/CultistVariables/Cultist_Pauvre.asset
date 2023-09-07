@@ -19,3 +19,5 @@ MonoBehaviour:
   MinNumberOfSymbols: 1
   MaxNumberOfSymbols: 2
   CultistTime: 10
+  MinSpeed: 1
+  MaxSpeed: 3

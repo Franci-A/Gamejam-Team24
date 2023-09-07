@@ -19,4 +19,7 @@ public class CultistsPreset : ScriptableObject
     public int MaxNumberOfSymbols;
 
     public float CultistTime;
+
+    public float MinSpeed;
+    public float MaxSpeed;
 }

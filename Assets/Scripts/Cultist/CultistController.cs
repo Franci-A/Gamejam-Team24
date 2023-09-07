@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class CultistController : MonoBehaviour
 {
-    [SerializeField] private float baseSpeed = 1;
+    private float baseSpeed = 1;
     [SerializeField] private Vector3 direction = new Vector3(0, 0 , -1);
     private float timer = 0;
     [SerializeField] private GameObject canvasParent;
@@ -32,6 +34,12 @@ public class CultistController : MonoBehaviour
 
     private bool isActive = false;
 
+    [Header("Walk")]
+    [SerializeField] private float lookInfrontDistance = 1f;
+    [SerializeField] private Vector2 hitSize;
+    [SerializeField] private LayerMask enemyMask;
+
+
     public void Init(int randomCultist)
     {
         totalPrize = _CultistPresets[randomCultist].CultistPrize;
@@ -40,11 +48,15 @@ public class CultistController : MonoBehaviour
         suspicionValue = _CultistPresets[randomCultist].SuspicionLevel;
         cultistTimer = _CultistPresets[randomCultist].CultistTime;
         timer = cultistTimer;
-        isActive = true;
+
+        baseSpeed = Random.Range(_CultistPresets[randomCultist].MinSpeed, _CultistPresets[randomCultist].MaxSpeed);
+
         timerImage.fillAmount = 1;
         canvasParent.SetActive(false);
         if(animator == null) animator = GetComponent<Animator>();
         animator.SetBool("IsWalking", true);
+        
+        isActive = true;
     }
 
     void Update()
@@ -54,7 +66,7 @@ public class CultistController : MonoBehaviour
 
         if (!isInDialog)
         {
-            transform.position += direction * baseSpeed * Time.deltaTime;
+            Walking();
         }
         else
         {
@@ -65,6 +77,46 @@ public class CultistController : MonoBehaviour
                 FailedDialog();
             }
         }
+    }
+
+    private void Walking()
+    {
+        RaycastHit2D[] hit = Physics2D.CapsuleCastAll(transform.position, hitSize, CapsuleDirection2D.Horizontal, 0, Vector2.down, lookInfrontDistance, enemyMask);
+        bool hasHit = false;
+        for (int i = 0; i < hit.Length; i++)
+        {
+            if (hit[i].collider.gameObject != gameObject)
+            {
+
+                Vector2 dis = hit[i].collider.transform.position - transform.position;
+                /*RaycastHit2D[] hitsRight = Physics2D.CircleCastAll(transform.position + new Vector3(1.5f, -1, 0) * lookInfrontDistance, .2f, Vector2.down, 1f, enemyMask);
+                RaycastHit2D[] hitsLeft = Physics2D.CircleCastAll(transform.position + new Vector3(-1.5f, -1, 0) * lookInfrontDistance, .2f , Vector2.down,  1f, enemyMask);
+                Debug.DrawLine(transform.position, transform.position + new Vector3(-1.5f, -1, 0) * lookInfrontDistance, Color.green);
+                if (hitsRight.Length == 0)
+                {
+                    direction = new Vector3(1, -1, 0).normalized;
+
+                }
+                else if (hitsLeft.Length == 0) 
+                {
+                    direction = new Vector3(-1, -1, 0).normalized;
+                }
+                else
+                {
+                    direction = Vector2.zero;
+                }*/
+
+                direction = new Vector3(Mathf.Sign(dis.x) * -1, -1, 0).normalized;
+
+                hasHit = true;
+            }
+        }
+
+        if (!hasHit)
+        {
+            direction = new Vector3(0, -1, 0);
+        }
+        transform.position += direction * baseSpeed * Time.deltaTime;
     }
 
     public void StartDialog()
@@ -157,4 +209,15 @@ public class CultistController : MonoBehaviour
         }
     }
 
+
+    private void OnDrawGizmos()
+    {
+        if (!isInDialog) 
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, hitSize.x);
+            Gizmos.DrawWireSphere(transform.position + Vector3.down * lookInfrontDistance, hitSize.x);
+            RaycastHit2D[] hit = Physics2D.CapsuleCastAll(transform.position, hitSize, CapsuleDirection2D.Horizontal, 0, Vector2.down, lookInfrontDistance, enemyMask);
+        }
+    }
 }

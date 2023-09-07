@@ -38,7 +38,9 @@ public class SuspicionBar : MonoBehaviour
     {
         slider.value = currentValue / totalValue;
         if (currentValue >= totalValue)
-            Debug.Log("game over");
+        {
+            //Debug.Log("game over");
+        }
     }
 
     private void OnDestroy()
