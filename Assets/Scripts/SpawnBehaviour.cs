@@ -15,7 +15,7 @@ public class SpawnBehaviour : MonoBehaviour
     private Vector3 cultistPosition;
 
     private int randomWaveID;
-    private int waveCount = 0;
+    [SerializeField] private int waveCount = 0;
     private int spawnCount = 0;
     private int numberOfSpawn;
     private int randomNumberOfCultists;
@@ -25,6 +25,10 @@ public class SpawnBehaviour : MonoBehaviour
     [SerializeField] private float cultistDisplacementPosition;
 
     [SerializeField] private CultistController cultistPrefab;
+
+    [SerializeField] private ScoreManager scoreScript;
+    private int scoreCoef=0;
+    private int scoreCoefCheck=1;
 
     public List<WavePreset> _WavePresets;
 
@@ -65,7 +69,6 @@ public class SpawnBehaviour : MonoBehaviour
         {
             finalCultistID.Add(4);
         }
-        Debug.Log(finalCultistID.Count);
         return finalCultistID;
 
     }
@@ -78,24 +81,40 @@ public class SpawnBehaviour : MonoBehaviour
             numberOfSpawn = Random.Range(minNumberOfSpawn, maxNumberOfSpawn);
             spawnCount = 0;
             waveCount += 1;
-            Debug.Log("NOMBRE DE WAVE");
-            Debug.Log(waveCount);
         }
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
     }
 
     IEnumerator CultistSpawnTimer(float spawnWaitTime)
     {
+        //TEST DU SCORE POUR VAGUE SATAN
+        scoreCoef = Mathf.FloorToInt(scoreScript.currentScore);
+        scoreCoef = scoreCoef / 2000;
 
-        if(waveCount >= 5)
+        //CAS DANS LEQUEL ON A DEPASSE LE TUTO
+        if (waveCount >= 5)
         {
-            randomWaveID = Random.Range(0, 5);
+            //SI ON VIENT DE DEPASSER 2000 (2000 etant le palier pour chaque vague satan)
+            if (scoreCoefCheck <= scoreCoef)
+            {
+                randomWaveID = 4; //wave id 4 -> vague satan
+            }
+            //SINON VAGUE NORMAL AUTRE QUE SATAN
+            else
+            {
+                randomWaveID = Random.Range(0, 4);
+            }
+
         }
+        //TUTORIEL
         else
         {
             randomWaveID = waveCount;
         }
+
         randomNumberOfCultists = Random.Range(1, 5);
+
+        scoreCoefCheck = scoreCoef + 1;
 
         List<int> finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
         while(finalCultistID.Count == 0)
