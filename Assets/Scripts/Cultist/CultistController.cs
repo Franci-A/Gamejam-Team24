@@ -18,8 +18,8 @@ public class CultistController : MonoBehaviour
     private int currentInput;
     private int indexLeft;
 
+    public int cultistId;
     private float totalPrize;
-    public string nameCultist;
     private int totalInputs;
     private float cultistValue;
     private float suspicionValue;
@@ -49,7 +49,7 @@ public class CultistController : MonoBehaviour
 
     public void Init(int cultistID)
     {
-        nameCultist = _CultistPresets[cultistID].CultistName;
+        cultistId = cultistID;
         totalPrize = _CultistPresets[cultistID].CultistPrize;
         cultistValue = _CultistPresets[cultistID].CultistLevel;
         suspicionValue = _CultistPresets[cultistID].SuspicionLevel;
@@ -182,6 +182,10 @@ public class CultistController : MonoBehaviour
         animator.SetTrigger("Transform");
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
+        if(cultistId == 2) //policier
+        {
+            lostEvent.scriptableEvent?.Invoke(suspicionValue);
+        }
         isDialogDone = true;
     }
 

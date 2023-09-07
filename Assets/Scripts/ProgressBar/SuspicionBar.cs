@@ -28,13 +28,21 @@ public class SuspicionBar : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        currentValue += values.baseAddValue.Evaluate(timer / values.timeToReachMaxValue);
+        currentValue += values.baseAddValue.Evaluate(timer / values.timeToReachMaxValue) *Time.deltaTime;
         UpdateSlider();
     }
 
     public void AddSuspicion(object obj)
     {
-        currentValue += values.failedInput;
+        if (obj != null)
+        {
+            currentValue += (float)obj;
+        }
+        else
+        {
+            currentValue += values.failedInput;
+        }
+            currentValue = Mathf.Clamp(currentValue, 0,100);
         UpdateSlider();
     }
 

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cultist_Police
   m_EditorClassIdentifier: 
   CultistName: Police
-  CultistPrize: 25
-  SuspicionLevel: 0
+  CultistPrize: -25
+  SuspicionLevel: -10
   CultistLevel: 1
   MinNumberOfSymbols: 1
   MaxNumberOfSymbols: 1
