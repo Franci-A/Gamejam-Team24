@@ -41,7 +41,7 @@ public class CultistController : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
 
 
-    public void Init(int randomCultist)
+    public void Init(int cultistID)
     {
         nameCultist = _CultistPresets[cultistID].CultistName;
         totalPrize = _CultistPresets[cultistID].CultistPrize;
@@ -51,7 +51,7 @@ public class CultistController : MonoBehaviour
         cultistTimer = _CultistPresets[cultistID].CultistTime;
         timer = cultistTimer;
 
-        baseSpeed = Random.Range(_CultistPresets[randomCultist].MinSpeed, _CultistPresets[randomCultist].MaxSpeed);
+        baseSpeed = Random.Range(_CultistPresets[cultistID].MinSpeed, _CultistPresets[cultistID].MaxSpeed);
 
         timerImage.fillAmount = 1;
         canvasParent.SetActive(false);
