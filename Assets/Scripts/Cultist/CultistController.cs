@@ -60,7 +60,7 @@ public class CultistController : MonoBehaviour
         animator.SetBool("IsWalking", true);
         
         isActive = true;
-        animator.SetFloat("Index", (float)randomCultist);
+        animator.SetFloat("Index", (float)cultistID);
     }
 
     void Update()
