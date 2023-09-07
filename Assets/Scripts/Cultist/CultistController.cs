@@ -23,6 +23,7 @@ public class CultistController : MonoBehaviour
     private float cultistValue;
     private float suspicionValue;
     private float cultistTimer;
+    private GameManager gameManager;
 
     [SerializeField] private Image iconInstance;
     [SerializeField] private Sprite[] iconSprites;
@@ -61,6 +62,8 @@ public class CultistController : MonoBehaviour
         
         isActive = true;
         animator.SetFloat("Index", (float)cultistID);
+        if (cultistID != 4) gameManager._CultistsGMref.Add(this.gameObject);
+        else gameObject.AddComponent<SatanController>();
     }
 
     void Update()
@@ -81,6 +84,10 @@ public class CultistController : MonoBehaviour
                 FailedDialog();
             }
         }
+    }
+    void Start()
+    {
+        gameManager = GameManager.Instance;
     }
 
     private void Walking()

@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class SatanController : MonoBehaviour
 {
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameManager.Instance;
+        gameManager._shouldSpawn = false;
+        foreach(GameObject cultiste in gameManager._CultistsGMref)
+        {
+
+        }
     }
 
     // Update is called once per frame

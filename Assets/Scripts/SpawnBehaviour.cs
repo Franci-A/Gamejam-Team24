@@ -88,6 +88,7 @@ public class SpawnBehaviour : MonoBehaviour
                 cultistPosition = spawnArray[randomNumberPosition].transform.position;
                 cultistPosition.x = cultistPosition.x + Random.Range(-cultistDisplacementPosition, cultistDisplacementPosition);
                 cultistColliders = Physics2D.OverlapCircle(cultistPosition, circleRadius, cultistMask);
+                yield return new WaitForSeconds(0.2f);
             } while (cultistColliders != null);
             CultistController cultise = Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity);
             Debug.Log(finalCultistID[counterOfSpawningCultist]);
