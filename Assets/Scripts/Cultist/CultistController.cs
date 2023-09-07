@@ -8,8 +8,9 @@ public class CultistController : MonoBehaviour
     [SerializeField] private float baseSpeed = 1;
     [SerializeField] private Vector3 direction = new Vector3(0, 0 , -1);
     private float timer = 0;
-    [SerializeField] private Image timerImage;
     [SerializeField] private GameObject canvasParent;
+    [SerializeField] private Image timerImage;
+    [SerializeField] private Animator animator;
     [HideInInspector] public bool isInDialog = false;
     private int currentInput;
 
@@ -21,9 +22,12 @@ public class CultistController : MonoBehaviour
 
     [SerializeField] private Image iconInstance;
     [SerializeField] private Sprite[] iconSprites;
+
+    [Header("Events")]
     [SerializeField] private GameObjectEvent lostEvent;
     [SerializeField] private GameObjectEvent joinedEvent;
     [SerializeField] private GameObjectEvent scoreEvent;
+
     public List<CultistsPreset> _CultistPresets;
 
     private bool isActive = false;
@@ -39,6 +43,8 @@ public class CultistController : MonoBehaviour
         isActive = true;
         timerImage.fillAmount = 1;
         canvasParent.SetActive(false);
+        if(animator == null) animator = GetComponent<Animator>();
+        animator.SetBool("IsWalking", true);
     }
 
     void Update()
@@ -64,6 +70,7 @@ public class CultistController : MonoBehaviour
     public void StartDialog()
     {
         isInDialog = true;
+        animator.SetBool("IsWalking", false);
         timer = cultistTimer;
         canvasParent.SetActive(true);
         GetSymbole();
@@ -127,6 +134,7 @@ public class CultistController : MonoBehaviour
         canvasParent.SetActive(false);
         Destroy(this.gameObject.GetComponent<Collider2D>());
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
+        animator.SetBool("IsWalking", true);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
     }
 
@@ -137,6 +145,7 @@ public class CultistController : MonoBehaviour
         Destroy(this.gameObject.GetComponent<Collider2D>());
         canvasParent.SetActive(false);
         lostEvent?.scriptableEvent.Invoke(cultistValue);
+        animator.SetBool("IsWalking", true);
         SoundManager.instance.PlayClip("FailAdept");
     }
 
