@@ -9,10 +9,10 @@ public class CultistBar : MonoBehaviour
 {
     [SerializeField] private GameObjectEvent cultistJoined;
     [SerializeField] private GameObjectEvent cultistSacrifice;
+    [SerializeField] private GameObjectEvent reduceSuspicion;
     private float currentValue;
     [SerializeField] private float totalValue = 100;
     [SerializeField] private Slider slider;
-    private float timer = 0;
     [SerializeField] private List<CultistScoreMultiplier> scores;
     [SerializeField] private FloatScriptable scoreMultiplier;
 
@@ -40,6 +40,7 @@ public class CultistBar : MonoBehaviour
 
     public void RemoveCultist(object obj)
     {
+        reduceSuspicion?.scriptableEvent.Invoke(currentValue);
         currentValue = 0;
         UpdateSlider();
     }

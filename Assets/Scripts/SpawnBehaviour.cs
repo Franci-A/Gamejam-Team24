@@ -15,8 +15,13 @@ public class SpawnBehaviour : MonoBehaviour
     private Vector3 cultistPosition;
 
     private int randomWaveID;
+    private int waveCount = 0;
+    private int spawnCount = 0;
+    private int numberOfSpawn;
     private int randomNumberOfCultists;
     private int randomNumberPosition;
+    [SerializeField] private int minNumberOfSpawn;
+    [SerializeField] private int maxNumberOfSpawn;
     [SerializeField] private float cultistDisplacementPosition;
 
     [SerializeField] private CultistController cultistPrefab;
@@ -27,6 +32,7 @@ public class SpawnBehaviour : MonoBehaviour
     void Start()
     {
         Debug.Log(spawnArray);
+        numberOfSpawn = Random.Range(minNumberOfSpawn, maxNumberOfSpawn);
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
     }
 
@@ -51,7 +57,7 @@ public class SpawnBehaviour : MonoBehaviour
                 randomValueID = Random.Range(0, 5);
                 if (randomValueProb < listOfCultist[randomValueID])
                 {
-                    finalCultistID.Add(i);
+                    finalCultistID.Add(randomValueID);
                 }
             }
         }
@@ -59,25 +65,44 @@ public class SpawnBehaviour : MonoBehaviour
         {
             finalCultistID.Add(4);
         }
+        Debug.Log(finalCultistID.Count);
         return finalCultistID;
 
     }
 
     public void CultistSpawn()
     {
+        spawnCount += 1;
+        if (spawnCount == numberOfSpawn)
+        {
+            numberOfSpawn = Random.Range(minNumberOfSpawn, maxNumberOfSpawn);
+            spawnCount = 0;
+            waveCount += 1;
+            Debug.Log("NOMBRE DE WAVE");
+            Debug.Log(waveCount);
+        }
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
     }
 
     IEnumerator CultistSpawnTimer(float spawnWaitTime)
     {
-        randomWaveID = Random.Range(0, 5);
-        randomNumberOfCultists = Random.Range(1, 5);
-        List<int> finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
 
-        while(finalCultistID == null)
+        if(waveCount >= 5)
+        {
+            randomWaveID = Random.Range(0, 5);
+        }
+        else
+        {
+            randomWaveID = waveCount;
+        }
+        randomNumberOfCultists = Random.Range(1, 5);
+
+        List<int> finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
+        while(finalCultistID.Count == 0)
         {
             finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
         }
+        yield return new WaitUntil(() => true);
 
         for (var counterOfSpawningCultist = 0; counterOfSpawningCultist < finalCultistID.Count; counterOfSpawningCultist++)
         {
@@ -91,7 +116,6 @@ public class SpawnBehaviour : MonoBehaviour
                 yield return new WaitForSeconds(0.2f);
             } while (cultistColliders != null);
             CultistController cultise = Instantiate<CultistController>(cultistPrefab, cultistPosition, Quaternion.identity);
-            Debug.Log(finalCultistID[counterOfSpawningCultist]);
             cultise.Init(finalCultistID[counterOfSpawningCultist]);
         }
         spawnWaitTime = Random.Range(spawnWaitTimeMin, spawnWaitTimeMax);
