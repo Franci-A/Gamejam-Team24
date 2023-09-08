@@ -498,6 +498,7 @@ MonoBehaviour:
   cultistMask:
     serializedVersion: 2
     m_Bits: 64
+  randomWaveID: 0
   waveCount: 0
   minNumberOfSpawn: 3
   maxNumberOfSpawn: 5
@@ -903,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727314122758193214, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.900024
+      value: 9.900055
       objectReference: {fileID: 0}
     - target: {fileID: 2748970554132446029, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -968,6 +969,10 @@ PrefabInstance:
     - target: {fileID: 3104448994502356765, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_text
       value: 999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655866992208429085, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
+      propertyPath: totalValue
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3929916910311151179, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchorMax.x

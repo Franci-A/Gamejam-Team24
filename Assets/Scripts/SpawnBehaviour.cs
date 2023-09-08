@@ -29,6 +29,7 @@ public class SpawnBehaviour : MonoBehaviour
     [SerializeField] private ScoreManager scoreScript;
     private int scoreCoef=0;
     private int scoreCoefCheck=1;
+    private bool scoreBoolCheck = false;
 
     public List<WavePreset> _WavePresets;
 
@@ -74,46 +75,57 @@ public class SpawnBehaviour : MonoBehaviour
 
     public void CultistSpawn()
     {
-        spawnCount += 1;
-        if (spawnCount == numberOfSpawn)
-        {
-            waveCount += 1;
-            numberOfSpawn = _WavePresets[randomWaveID].numberOfCultistsEachWaves;
-            spawnCount = 0;
-        }
-        StartCoroutine(CultistSpawnTimer(spawnWaitTime));
-    }
-
-    IEnumerator CultistSpawnTimer(float spawnWaitTime)
-    {
         //TEST DU SCORE POUR VAGUE SATAN
         scoreCoef = Mathf.FloorToInt(scoreScript.currentScore);
         scoreCoef = scoreCoef / 2000;
 
-        //CAS DANS LEQUEL ON A DEPASSE LE TUTO
-        if (waveCount >= 5)
+        if (scoreCoefCheck == scoreCoef)
         {
-            //SI ON VIENT DE DEPASSER 2000 (2000 etant le palier pour chaque vague satan)
-            if (scoreCoefCheck <= scoreCoef)
+            scoreBoolCheck = true;
+        }
+
+        spawnCount += 1;
+
+        if (waveCount >= 4 && spawnCount == numberOfSpawn)
+        {
+            waveCount += 1;
+            if (scoreBoolCheck)
             {
                 randomWaveID = 4; //wave id 4 -> vague satan
+                scoreBoolCheck = false;
             }
             //SINON VAGUE NORMAL AUTRE QUE SATAN
             else
             {
                 randomWaveID = Random.Range(0, 4);
             }
-
+            numberOfSpawn = _WavePresets[randomWaveID].numberOfCultistsEachWaves;
+            spawnCount = 0;
         }
-        //TUTORIEL
-        else
+        else if (spawnCount == numberOfSpawn)
+        {
+            waveCount += 1;
+            if (waveCount < 5)
+            {
+                numberOfSpawn = _WavePresets[waveCount].numberOfCultistsEachWaves;
+            }
+            spawnCount = 0;
+        }
+
+        scoreCoefCheck = scoreCoef + 1;
+
+        if (waveCount < 5)
         {
             randomWaveID = waveCount;
         }
-        if (cultistPrefab.ID == 4) randomNumberOfCultists = 1;
-        else randomNumberOfCultists = Random.Range(1, 5);
+        StartCoroutine(CultistSpawnTimer(spawnWaitTime));
+    }
 
-        scoreCoefCheck = scoreCoef + 1;
+    IEnumerator CultistSpawnTimer(float spawnWaitTime)
+    {
+        randomNumberOfCultists = Random.Range(1, 5);
+
+        
 
         List<int> finalCultistID = CultistChoiceAndProb(randomWaveID,randomNumberOfCultists);
         while(finalCultistID.Count == 0)
