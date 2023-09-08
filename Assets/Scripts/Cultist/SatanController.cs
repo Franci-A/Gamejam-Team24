@@ -13,6 +13,7 @@ public class SatanController : MonoBehaviour
         gameManager = GameManager.Instance;
         gameManager._shouldSpawn = false;
         gameManager.GlobalVolume.SetBool("DiableHere", true);
+        MusicManager.instance.ChangeToDevil();
         Satan = gameObject.GetComponent<CultistController>();
         Player = GameObject.FindGameObjectWithTag("Player");
         foreach (GameObject cultiste in gameManager._CultistsGMref)
@@ -32,5 +33,6 @@ public class SatanController : MonoBehaviour
         gameManager._shouldSpawn = true;
         gameManager.SatanLive = 0;
         gameManager.GlobalVolume?.SetBool("DiableHere", false);
+        MusicManager.instance.ChangeToMainGame();
     }
 }
