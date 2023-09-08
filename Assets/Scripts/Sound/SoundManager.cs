@@ -60,7 +60,8 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning("The clip " + name + " doesn't exist !");
             return;
         }
-        s.source.Play();
+        if (s.Oneshot) s.source.PlayOneShot(s.clip);
+        else s.source.Play();
     }
 }
 
@@ -75,6 +76,7 @@ public class Sounds
     [Range(.1f, 3f)]
     public float pitch;
     public bool loop;
+    public bool Oneshot;
 
     [HideInInspector]
     public AudioSource source;

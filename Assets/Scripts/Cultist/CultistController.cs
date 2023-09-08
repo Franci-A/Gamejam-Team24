@@ -20,7 +20,6 @@ public class CultistController : MonoBehaviour
     private int currentInput;
     private int indexLeft;
 
-    public int cultistId;
     private float totalPrize;
     private int totalInputs;
     private float cultistValue;
@@ -68,7 +67,7 @@ public class CultistController : MonoBehaviour
             Image icon = Instantiate<Image>(iconPrefab, iconParent.transform);
             icon.rectTransform.DOLocalMoveY(-10 * i, .1f);
             int symbol = Random.Range(0, 4);
-            if (cultistId == 3)
+            if (ID == 3)
             {
                 if(i == 0)
                 {
@@ -79,7 +78,13 @@ public class CultistController : MonoBehaviour
                     symbol = Random.Range(0, 6);
                 }
             }
+            if (ID == 2)
+            {
+                symbol = 5;
+            }
+            
             iconsList[i] = symbol;
+            Debug.Log($"[{string.Join(",", iconsList)}]");
             icon.sprite = iconSprites[symbol];
             iconsImages.Add(icon);
         }
@@ -219,13 +224,13 @@ public class CultistController : MonoBehaviour
         animator.SetTrigger("Transform");
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
-        if(cultistId == 4)
+        if(ID == 4)
         {
             gameManager._shouldSpawn = true;
             gameManager.SatanLive = 0;
             gameManager.GlobalVolume?.SetBool("DiableHere", false);
         }
-        if(cultistId == 2) //policier
+        if(ID == 2) //policier
         {
             lostEvent.scriptableEvent?.Invoke(suspicionValue);
         }

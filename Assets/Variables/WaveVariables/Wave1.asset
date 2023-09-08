@@ -15,6 +15,6 @@ MonoBehaviour:
   numberOfCultistsEachWaves: 5
   typePauvreRate: 0
   typeRicheRate: 0
-  typePoliceRate: 0
-  typeJokerRate: 100
+  typePoliceRate: 100
+  typeJokerRate: 0
   typeSatanRate: 0

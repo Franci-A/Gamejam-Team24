@@ -125,7 +125,17 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("add coins");
         if (CollidedCultist == null)
             return;
-        CollidedCultist.CorrectInput(5);
+        if (CollidedCultist.ID == 2)
+        {
+            if ((int)context.ReadValue<float>() == 1)
+            {
+                SoundManager.instance.PlayClip("GoodMotif");
+            }
+            if ((int)context.ReadValue<float>() == 0)
+            {
+                CollidedCultist.CorrectInput(5);
+            }
+        }
     }
     private void GoldButtons(InputAction.CallbackContext context)
     {
