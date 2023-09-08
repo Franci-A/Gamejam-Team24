@@ -341,7 +341,7 @@ MonoBehaviour:
   _movementSpeed: 5
   lostCultist: {fileID: 11400000, guid: 98117135f03952644bd7d91fb068d492, type: 2}
   joinedCultist: {fileID: 11400000, guid: 36e1201bdb8015940a73ef4ec310da34, type: 2}
-  _arcadeControls: 1
+  _arcadeControls: 0
   sacrificeEvent: {fileID: 11400000, guid: 024b91f91e7379e47987c68eba4d65f1, type: 2}
 --- !u!4 &207235405
 Transform:
@@ -903,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727314122758193214, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.900024
+      value: 9.900085
       objectReference: {fileID: 0}
     - target: {fileID: 2748970554132446029, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchorMax.x
