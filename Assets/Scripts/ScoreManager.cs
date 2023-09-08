@@ -10,6 +10,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private GameObjectEvent addScoreEvent;
     [SerializeField] private FloatScriptable scoreMultiplier;
 
+    [SerializeField] private Animator moneyUp;
+    [SerializeField] private Animator moneyDown;
+
     private void Start()
     {
         currentScore = 0;
@@ -21,6 +24,14 @@ public class ScoreManager : MonoBehaviour
     {
         currentScore += (float)obj * scoreMultiplier.Value;
         UpdateScore();
+        if(Mathf.Sign((float)obj) > 0)
+        {
+            moneyUp.SetTrigger("Play");
+        }
+        else
+        {
+            moneyDown.SetTrigger("Play");
+        }
     }
 
     private void UpdateScore()
