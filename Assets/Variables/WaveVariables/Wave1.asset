@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Wave1
   m_EditorClassIdentifier: 
   numberOfCultistsEachWaves: 5
-  typePauvreRate: 0
-  typeRicheRate: 0
-  typePoliceRate: 100
+  typePauvreRate: 75
+  typeRicheRate: 25
+  typePoliceRate: 0
   typeJokerRate: 0
   typeSatanRate: 0

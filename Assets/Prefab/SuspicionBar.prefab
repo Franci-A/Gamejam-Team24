@@ -564,13 +564,13 @@ MonoBehaviour:
   slider: {fileID: 6116888966591056232}
   scores:
   - percentageNeeded: 0.25
-    multiplierGiven: 1.25
-  - percentageNeeded: 0.5
-    multiplierGiven: 1.5
-  - percentageNeeded: 0.75
-    multiplierGiven: 1.75
-  - percentageNeeded: 1
     multiplierGiven: 2
+  - percentageNeeded: 0.4
+    multiplierGiven: 3
+  - percentageNeeded: 0.6
+    multiplierGiven: 5
+  - percentageNeeded: 1
+    multiplierGiven: 10
   scoreMultiplier: {fileID: 11400000, guid: d3e9966a6ba0dd24cb6a5023ad76ea2d, type: 2}
 --- !u!1 &5057878211175285280
 GameObject:
