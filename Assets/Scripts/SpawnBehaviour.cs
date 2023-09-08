@@ -30,6 +30,7 @@ public class SpawnBehaviour : MonoBehaviour
     private int scoreCoef=0;
     private int scoreCoefCheck=1;
     private bool scoreBoolCheck = false;
+    public int scoreLimit;
 
     public List<WavePreset> _WavePresets;
 
@@ -77,7 +78,7 @@ public class SpawnBehaviour : MonoBehaviour
     {
         //TEST DU SCORE POUR VAGUE SATAN
         scoreCoef = Mathf.FloorToInt(scoreScript.currentScore);
-        scoreCoef = scoreCoef / 2000;
+        scoreCoef = scoreCoef / scoreLimit;
 
         if (scoreCoefCheck == scoreCoef)
         {
