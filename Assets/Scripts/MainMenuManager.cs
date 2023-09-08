@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
 {
     private void Start()
     {
-        MusicManager.instance.ChangeToMainMenu();
+        MusicManager.instance?.ChangeToMainMenu();
     }
     public void StartGame()
     { 
