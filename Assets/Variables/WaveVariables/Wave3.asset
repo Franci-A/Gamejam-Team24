@@ -16,5 +16,5 @@ MonoBehaviour:
   typePauvreRate: 20
   typeRicheRate: 60
   typePoliceRate: 31
-  typeJokerRate: 50
+  typeJokerRate: 20
   typeSatanRate: 0

@@ -110,7 +110,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""83c156dc-ea09-4911-86d1-cca317e88345"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",
@@ -121,7 +121,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""35b6f848-56f3-423c-8a82-7d8664832cee"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=3)"",
                     ""groups"": """",
@@ -132,7 +132,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""31413e1f-6c4e-4834-9975-9604eb156d1b"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/t"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=4)"",
                     ""groups"": """",
@@ -143,7 +143,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dd0eb146-9750-4d9e-85e5-382f6cebbaa4"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -154,7 +154,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8c5d2550-50c4-4d41-94cb-f0559d47f312"",
-                    ""path"": ""<Keyboard>/g"",
+                    ""path"": ""<Keyboard>/u"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",
@@ -165,7 +165,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""36192c38-cf1f-48ab-a68e-fc2294ecb528"",
-                    ""path"": ""<Keyboard>/h"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=3)"",
                     ""groups"": """",
@@ -176,7 +176,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""40ed0f33-ab29-4dc4-8bfa-f206eeaa922d"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Keyboard>/o"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=4)"",
                     ""groups"": """",
@@ -187,7 +187,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""190246ba-9386-4c84-87a8-6ac8c0d69d97"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -198,7 +198,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""882caaa1-f8e9-433d-adbc-b9cf7a49ee0b"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -208,30 +208,8 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c98338d5-aaa5-4cf9-aa58-6cbe1fc5cdef"",
-                    ""path"": ""<Keyboard>/k"",
-                    ""interactions"": ""MultiTap(tapCount=5)"",
-                    ""processors"": ""Scale(factor=2)"",
-                    ""groups"": """",
-                    ""action"": ""AddCoinsButtons"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dad26797-7d09-48f1-9109-15c37503581e"",
-                    ""path"": ""<Keyboard>/l"",
-                    ""interactions"": ""MultiTap(tapCount=5)"",
-                    ""processors"": ""Scale(factor=2)"",
-                    ""groups"": """",
-                    ""action"": ""AddCoinsButtons"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d5ef1e8c-6799-4150-8f02-62d70d798620"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -242,7 +220,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2f5d1727-e9d5-4186-9685-a311f0b702ac"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -253,7 +231,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9da983fb-4239-434e-adb0-e6c7576469e0"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -264,7 +242,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a79ad6b8-ad5f-4369-9cf0-0763e2be76f4"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/v"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -328,7 +306,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""288ad02b-89d6-4060-97ca-1e766aa46172"",
-                    ""path"": ""<Joystick>/trigger"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -339,7 +317,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d19033e5-04fa-4fdc-ba36-99fd9ea33958"",
-                    ""path"": ""<HID::DragonRise Inc.   Generic   USB  Joystick  >/button12"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",
@@ -350,7 +328,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a1781dfd-dd63-4cf1-a933-5cabe773163f"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -361,7 +339,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c4c6b373-c94f-489d-8e26-4f01b3bd0f58"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",

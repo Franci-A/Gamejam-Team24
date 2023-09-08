@@ -504,7 +504,7 @@ MonoBehaviour:
     m_ActionName: AMcontrolsArcade/Joystick
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: AMcontrols
+  m_DefaultActionMap: AMcontrolsArcade
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1820004758
