@@ -220,8 +220,8 @@ public class CultistController : MonoBehaviour
         Debug.Log("All inputs done");
         canvasParent.SetActive(false);
         SoundManager.instance.PlayClip("WinAdept");
-        Destroy(this.gameObject.GetComponent<Collider2D>());
-        animator.SetTrigger("Transform");
+        this.tag = "NotEnnemy";
+        if (ID!=4) animator.SetTrigger("Transform");
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
         if(ID == 4)
@@ -235,6 +235,13 @@ public class CultistController : MonoBehaviour
             lostEvent.scriptableEvent?.Invoke(suspicionValue);
         }
         isDialogDone = true;
+        if (ID != 4) {GameObject fumee =Instantiate(gameManager.PrefabFummee,transform);
+        fumee.transform.position = new Vector3(transform.position.x, transform.position.y+1, transform.position.z);}
+        else
+        {
+            SHouldImpareSatanMovements=false;
+            isInDialog = false;
+        }
     }
 
     IEnumerator AngrySatan()

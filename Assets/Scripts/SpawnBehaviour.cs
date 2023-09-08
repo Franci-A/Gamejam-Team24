@@ -158,7 +158,6 @@ public class SpawnBehaviour : MonoBehaviour
     {
         //Gizmos.DrawSphere(cultistPosition, circleRadius);
     }
-
     private void OnDestroy()
     {
         StopAllCoroutines();

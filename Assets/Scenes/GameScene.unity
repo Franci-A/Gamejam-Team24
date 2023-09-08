@@ -499,7 +499,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   randomWaveID: 0
-  waveCount: 0
+  waveCount: 3
   minNumberOfSpawn: 3
   maxNumberOfSpawn: 5
   cultistDisplacementPosition: 0.5
@@ -1403,6 +1403,8 @@ MonoBehaviour:
   SuspicionStressVolume: {fileID: 596703872}
   SatansWaves: 010000000300000003000000
   SatanLive: 0
+  PrefabFummee: {fileID: 1918164837296753010, guid: 7ea3518dfecd102468d10e3c0873383b, type: 3}
+  CollidedCultist: {fileID: 0}
 --- !u!4 &1430140426
 Transform:
   m_ObjectHideFlags: 0

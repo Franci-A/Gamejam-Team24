@@ -11,7 +11,7 @@ public class CultistFade : MonoBehaviour
 
             SoundManager.instance.PlayClip("WinAdept");
             SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-            sr.DOFade(0, 1).onComplete = Suicide;
+            transform.parent.GetComponent<CultistController>().isInDialog = false;
 
     }
     void Suicide()

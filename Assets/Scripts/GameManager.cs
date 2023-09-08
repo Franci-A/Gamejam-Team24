@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public int SatanLive = 0;
     PlayerMovement player;
     SpawnBehaviour spawnBehaviour;
+    public GameObject PrefabFummee;
+    public GameObject CollidedCultist;
     private void Awake()
     {
         if (Instance != null)

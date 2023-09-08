@@ -163,6 +163,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (CollidedCultist == null)
             {
+                GameManager.Instance.CollidedCultist = collision.gameObject;
                 CollidedCultist = collision.gameObject.GetComponent<CultistController>();
                 CollidedCultist.StartDialog();
                 _playerTransform.DOKill();
@@ -172,6 +173,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnReleaseCultist(object obj)
     {
+
+        GameManager.Instance.CollidedCultist = null;
         CollidedCultist = null;
     }
 
