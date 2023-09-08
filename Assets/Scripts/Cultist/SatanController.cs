@@ -18,7 +18,7 @@ public class SatanController : MonoBehaviour
         foreach (GameObject cultiste in gameManager._CultistsGMref)
         {
             CultistController Ccontroller = cultiste.GetComponent<CultistController>();
-            Destroy(cultiste.GetComponent<BoxCollider2D>());
+            cultiste.tag = "NotEnnemy";
             Ccontroller.baseSpeed = 10;
         }
     }

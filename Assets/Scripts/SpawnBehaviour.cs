@@ -47,7 +47,7 @@ public class SpawnBehaviour : MonoBehaviour
         float joker = wave.typeJokerRate;
         float police = wave.typePoliceRate;
         float satan = wave.typeSatanRate;
-        float[] listOfCultist = {pauvre,riche,joker,police,satan};
+        float[] listOfCultist = {pauvre,riche,police, joker, satan};
 
 
         int randomValueProb = Random.Range(1, 100);

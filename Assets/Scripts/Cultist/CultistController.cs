@@ -219,6 +219,12 @@ public class CultistController : MonoBehaviour
         animator.SetTrigger("Transform");
         joinedEvent?.scriptableEvent.Invoke(cultistValue);
         scoreEvent.scriptableEvent.Invoke(totalPrize);
+        if(cultistId == 4)
+        {
+            gameManager._shouldSpawn = true;
+            gameManager.SatanLive = 0;
+            gameManager.GlobalVolume?.SetBool("DiableHere", false);
+        }
         if(cultistId == 2) //policier
         {
             lostEvent.scriptableEvent?.Invoke(suspicionValue);

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - EndZone
   - Ennemy
+  - FxTemporaire
+  - NotEnnemy
   layers:
   - Default
   - TransparentFX

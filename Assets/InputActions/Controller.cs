@@ -200,6 +200,28 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""id"": ""882caaa1-f8e9-433d-adbc-b9cf7a49ee0b"",
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": ""MultiTap(tapCount=5)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AddCoinsButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1dd3dbd-5102-4287-a137-74e1f8559e40"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""AddCoinsButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""268680cd-ef45-46ed-aab0-7470de25ef49"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
                     ""processors"": ""Scale(factor=2)"",
                     ""groups"": """",
                     ""action"": ""AddCoinsButtons"",

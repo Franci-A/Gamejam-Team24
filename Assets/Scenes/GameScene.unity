@@ -1250,7 +1250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 457081308}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1021769090
 MonoBehaviour:
@@ -1487,9 +1487,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fd687f95a5b044dbd413ff6de05942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shouldSpawn: 0
+  _shouldSpawn: 1
   _CultistsGMref: []
   gameOverEvent: {fileID: 11400000, guid: 36d8403a8a1dfc542ad92cb5d61de923, type: 2}
+  GlobalVolume: {fileID: 1021769091}
+  SatansWaves: 010000000300000003000000
+  SatanLive: 0
 --- !u!4 &1430140426
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,6 +1762,9 @@ MonoBehaviour:
   _shouldSpawn: 1
   _CultistsGMref: []
   gameOverEvent: {fileID: 0}
+  GlobalVolume: {fileID: 0}
+  SatansWaves: 
+  SatanLive: 0
 --- !u!1 &1648185775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,3 +2048,4 @@ SceneRoots:
   - {fileID: 1430140426}
   - {fileID: 1919061465}
   - {fileID: 229049381}
+  - {fileID: 1021769089}
