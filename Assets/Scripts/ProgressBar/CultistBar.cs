@@ -40,6 +40,7 @@ public class CultistBar : MonoBehaviour
 
     public void RemoveCultist(object obj)
     {
+        if(currentValue >= totalValue) GameManager.Instance.Explosion.SetTrigger("Trigger");
         reduceSuspicion?.scriptableEvent.Invoke(currentValue);
         currentValue = 0;
         UpdateSlider();

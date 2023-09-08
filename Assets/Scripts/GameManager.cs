@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     SpawnBehaviour spawnBehaviour;
     public GameObject PrefabFummee;
     public GameObject CollidedCultist;
+    public Animator Explosion;
     private void Awake()
     {
         if (Instance != null)
