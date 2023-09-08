@@ -152,6 +152,7 @@ public class PlayerMovement : MonoBehaviour
     private void Joystick(InputAction.CallbackContext context)
     {
         sacrificeEvent?.scriptableEvent.Invoke(null);
+        GameManager.Instance.ShakeCamera();
         SoundManager.instance.PlayClip("Blood");
         SoundManager.instance.PlayClip("Lever");
         SoundManager.instance.PlayClip("Slash");

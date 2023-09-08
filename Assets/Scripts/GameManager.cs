@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void ShakeCamera()
     {
-
+        GameObject.FindFirstObjectByType<Camera>().transform.DOShakePosition(0.5f,0.5f);
     }
 
     IEnumerator StartWaves()
