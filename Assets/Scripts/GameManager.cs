@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
 
+        MusicManager.instance?.ChangeToMainGame();
         gameOverEvent.scriptableEvent.AddListener(GameOver);
         player = FindObjectOfType<PlayerMovement>();
         spawnBehaviour = FindObjectOfType<SpawnBehaviour>();

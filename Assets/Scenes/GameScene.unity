@@ -505,7 +505,7 @@ MonoBehaviour:
   cultistDisplacementPosition: 0.5
   cultistPrefab: {fileID: 8581349374312404868, guid: e94cc483550111046b8eb26b23ce06cf, type: 3}
   scoreScript: {fileID: 1732478435}
-  scoreLimit: 2000
+  scoreLimit: 25000
   _WavePresets:
   - {fileID: 11400000, guid: ba36251ad383a5a479d48ed8b32c72a6, type: 2}
   - {fileID: 11400000, guid: c0a6ec02ae611fb4cb1b80631e177e7d, type: 2}
@@ -1573,8 +1573,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FailAdept
     clip: {fileID: 8300000, guid: 5279cc611ff98cb4884707e6168abf40, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 0.65
+    pitch: 1.53
     loop: 0
     Oneshot: 0
     source: {fileID: 0}
@@ -1621,7 +1621,7 @@ MonoBehaviour:
     Oneshot: 0
     source: {fileID: 0}
   - name: WinAdept
-    clip: {fileID: 8300000, guid: 84aaae3272a17a44b81ccef50d3f5429, type: 3}
+    clip: {fileID: 8300000, guid: 3358eb48bc1f84d46a0879b4d45da083, type: 3}
     volume: 1
     pitch: 1
     loop: 0

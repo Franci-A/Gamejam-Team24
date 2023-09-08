@@ -9,7 +9,7 @@ public class CultistFade : MonoBehaviour
     void CultistEventCaller()
     {
 
-            SoundManager.instance.PlayClip("WinAdept");
+            SoundManager.instance.PlayClip("WinAdept"); //;D
             SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
             transform.parent.GetComponent<CultistController>().isInDialog = false;
 
