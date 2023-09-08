@@ -47,8 +47,10 @@ public class CultistBar : MonoBehaviour
 
     private void UpdateSlider()
     {
+        
         float percentage = currentValue / totalValue;
         slider.value = percentage;
+
         for (int i = 0; i < scores.Count; i++)
         {
             if(percentage >= scores[i].percentageNeeded)
@@ -58,6 +60,7 @@ public class CultistBar : MonoBehaviour
             }
         }
         scoreMultiplier.SetValue(1);
+
     }
 
     private void OnDestroy()

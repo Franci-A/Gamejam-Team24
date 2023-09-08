@@ -698,6 +698,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &596703870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596703873}
+  - component: {fileID: 596703872}
+  m_Layer: 0
+  m_Name: SuspicionBarHigh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596703872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596703870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 2d6bdadccc741b348b285763bec1bc84, type: 2}
+--- !u!4 &596703873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596703870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730614481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 0
   sharedProfile: {fileID: 11400000, guid: e4cfb4b9bba43b4478f0c2d2c9b7128a, type: 2}
@@ -1506,6 +1555,7 @@ MonoBehaviour:
   _CultistsGMref: []
   gameOverEvent: {fileID: 11400000, guid: 36d8403a8a1dfc542ad92cb5d61de923, type: 2}
   GlobalVolume: {fileID: 1021769091}
+  SuspicionStressVolume: {fileID: 596703872}
   SatansWaves: 010000000300000003000000
   SatanLive: 0
 --- !u!4 &1430140426
@@ -2027,3 +2077,4 @@ SceneRoots:
   - {fileID: 1919061465}
   - {fileID: 229049381}
   - {fileID: 1021769089}
+  - {fileID: 596703873}

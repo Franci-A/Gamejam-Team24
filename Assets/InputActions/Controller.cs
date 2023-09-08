@@ -210,7 +210,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""062f1218-fc57-4a6d-bb1a-e00b5af43958"",
                     ""path"": ""<Keyboard>/l"",
-                    ""interactions"": ""MultiTap(tapCount=5)"",
+                    ""interactions"": ""MultiTap(tapDelay=1,tapCount=5)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""AddCoinsButtons"",

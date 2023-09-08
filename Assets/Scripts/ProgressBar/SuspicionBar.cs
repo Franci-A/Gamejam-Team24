@@ -29,6 +29,7 @@ public class SuspicionBar : MonoBehaviour
     {
         timer += Time.deltaTime;
         currentValue += values.baseAddValue.Evaluate(timer / values.timeToReachMaxValue) *Time.deltaTime;
+
         UpdateSlider();
     }
 
@@ -49,6 +50,8 @@ public class SuspicionBar : MonoBehaviour
     private void UpdateSlider()
     {
         slider.value = currentValue / totalValue;
+        print((slider.value - 0.25f) / 0.75f);
+        GameManager.Instance.SuspicionStressVolume.weight = slider.value+0.4f;
         if (currentValue >= totalValue && !isGameover)
         {
             isGameover = true;

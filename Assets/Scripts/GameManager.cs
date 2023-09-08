@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> _CultistsGMref;
     [SerializeField] private GameObjectEvent gameOverEvent;
     public Animator GlobalVolume;
+    public Volume SuspicionStressVolume;
     public List<int> SatansWaves;
     public int SatanLive = 0;
     PlayerMovement player;
@@ -33,6 +36,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _CultistsGMref = new List<GameObject>();
+        
+    }
+
+    public void ShakeCamera()
+    {
+
     }
 
     IEnumerator StartWaves()
