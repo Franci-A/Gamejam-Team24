@@ -78,6 +78,10 @@ public class CultistController : MonoBehaviour
                     symbol = Random.Range(0, 6);
                 }
             }
+            if (ID == 2)
+            {
+                symbol = 5;
+            }
             
             iconsList[i] = symbol;
             Debug.Log($"[{string.Join(",", iconsList)}]");

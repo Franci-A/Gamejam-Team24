@@ -125,8 +125,22 @@ public class PlayerMovement : MonoBehaviour
         if (CollidedCultist == null)
             return;
 
-        SoundManager.instance.PlayClip("GoodMotif");
-        CollidedCultist.CorrectInput(5);
+        if (CollidedCultist.ID == 2)
+        {
+            print((int)context.ReadValue<float>());
+            if ((int)context.ReadValue<float>() == 1)
+            {
+                SoundManager.instance.PlayClip("GoodMotif");
+            }
+            if ((int)context.ReadValue<float>() == 0)
+            {
+                CollidedCultist.CorrectInput(5);
+            }
+        }
+        else
+        {
+            CollidedCultist.CorrectInput(5);
+        }
     }
     private void GoldButtons(InputAction.CallbackContext context)
     {
