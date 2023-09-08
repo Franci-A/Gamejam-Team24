@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Cultist_Riche
   m_EditorClassIdentifier: 
   CultistName: Riche
-  CultistPrize: 50
+  CultistPrize: 250
   SuspicionLevel: 0
-  CultistLevel: 2
+  CultistLevel: 20
   MinNumberOfSymbols: 2
-  MaxNumberOfSymbols: 4
-  CultistTime: 10
-  MinSpeed: 0.8
-  MaxSpeed: 2.2
+  MaxNumberOfSymbols: 3
+  CultistTime: 7
+  MinSpeed: 1.2
+  MaxSpeed: 2.5
