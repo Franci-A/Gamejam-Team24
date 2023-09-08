@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a1f7ca9e3490b498a070e3bd318948, type: 3}
   m_Name: Wave3
   m_EditorClassIdentifier: 
-  numberOfCultistsEachWaves: 0
+  numberOfCultistsEachWaves: 5
   typePauvreRate: 20
   typeRicheRate: 60
   typePoliceRate: 31

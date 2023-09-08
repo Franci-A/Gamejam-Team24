@@ -14,7 +14,7 @@ public class SpawnBehaviour : MonoBehaviour
     [SerializeField] private LayerMask cultistMask;
     private Vector3 cultistPosition;
 
-    private int randomWaveID;
+    public int randomWaveID;
     [SerializeField] private int waveCount = 0;
     private int spawnCount = 0;
     private int numberOfSpawn;
@@ -77,9 +77,9 @@ public class SpawnBehaviour : MonoBehaviour
         spawnCount += 1;
         if (spawnCount == numberOfSpawn)
         {
-            numberOfSpawn = _WavePresets[waveCount+1].numberOfCultistsEachWaves;
-            spawnCount = 0;
             waveCount += 1;
+            numberOfSpawn = _WavePresets[randomWaveID].numberOfCultistsEachWaves;
+            spawnCount = 0;
         }
         StartCoroutine(CultistSpawnTimer(spawnWaitTime));
     }
