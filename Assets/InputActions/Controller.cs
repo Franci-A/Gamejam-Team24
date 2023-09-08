@@ -209,7 +209,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""062f1218-fc57-4a6d-bb1a-e00b5af43958"",
-                    ""path"": ""<Keyboard>/p"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": ""MultiTap(tapCount=5)"",
                     ""processors"": """",
                     ""groups"": """",
@@ -220,7 +220,7 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a9ad6356-4741-4c2c-8de9-a8f2bb979bdb"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": ""MultiTap(tapCount=5)"",
                     ""processors"": """",
                     ""groups"": """",
@@ -452,6 +452,28 @@ public partial class @Controller: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""AddCoinsButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddecb6d1-05f0-4fcd-9fab-adc42fe23429"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": ""MultiTap(tapCount=5)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AddCoinsButtons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9853c664-302e-408d-8389-67f3d2c187ed"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": ""MultiTap(tapCount=5)"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""AddCoinsButtons"",
                     ""isComposite"": false,
