@@ -1571,8 +1571,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FailAdept
     clip: {fileID: 8300000, guid: 5279cc611ff98cb4884707e6168abf40, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 0.65
+    pitch: 1.53
     loop: 0
     Oneshot: 0
     source: {fileID: 0}
