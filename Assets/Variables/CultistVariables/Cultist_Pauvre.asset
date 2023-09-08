@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Cultist_Pauvre
   m_EditorClassIdentifier: 
   CultistName: Pauvre
-  CultistPrize: 20
+  CultistPrize: 100
   SuspicionLevel: 0
-  CultistLevel: 1
+  CultistLevel: 10
   MinNumberOfSymbols: 1
   MaxNumberOfSymbols: 2
-  CultistTime: 10
+  CultistTime: 7
   MinSpeed: 0.8
   MaxSpeed: 2.2

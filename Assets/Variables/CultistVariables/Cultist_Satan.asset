@@ -15,9 +15,9 @@ MonoBehaviour:
   CultistName: Satan
   CultistPrize: 1000
   SuspicionLevel: 0
-  CultistLevel: 50
+  CultistLevel: 100
   MinNumberOfSymbols: 1
   MaxNumberOfSymbols: 5
-  CultistTime: 10
+  CultistTime: 6
   MinSpeed: 2
   MaxSpeed: 2
