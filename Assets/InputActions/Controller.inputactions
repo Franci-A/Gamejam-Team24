@@ -328,7 +328,7 @@
                 {
                     "name": "",
                     "id": "a1781dfd-dd63-4cf1-a933-5cabe773163f",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -430,6 +430,28 @@
                     "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "Scale(factor=2)",
+                    "groups": "",
+                    "action": "AddCoinsButtons",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddecb6d1-05f0-4fcd-9fab-adc42fe23429",
+                    "path": "<Keyboard>/q",
+                    "interactions": "MultiTap(tapCount=5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AddCoinsButtons",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9853c664-302e-408d-8389-67f3d2c187ed",
+                    "path": "<Keyboard>/p",
+                    "interactions": "MultiTap(tapCount=5)",
+                    "processors": "",
                     "groups": "",
                     "action": "AddCoinsButtons",
                     "isComposite": false,
