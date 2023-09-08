@@ -239,6 +239,7 @@ public class CultistController : MonoBehaviour
 
     IEnumerator AngrySatan()
     {
+        GameManager.Instance.ShakeCamera();
         SoundManager.instance.PlayClip("AngrySatan");
         yield return new WaitForSeconds(1);
         gameManager.SatanLive++;
