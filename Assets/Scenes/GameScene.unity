@@ -970,6 +970,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 999999
       objectReference: {fileID: 0}
+    - target: {fileID: 3655866992208429085, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
+      propertyPath: totalValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3929916910311151179, guid: 2ebb7bf81bb6e5441bc07def12f9ff3f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
