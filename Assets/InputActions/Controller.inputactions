@@ -187,8 +187,8 @@
                 {
                     "name": "",
                     "id": "062f1218-fc57-4a6d-bb1a-e00b5af43958",
-                    "path": "<Keyboard>/p",
-                    "interactions": "MultiTap(tapCount=5)",
+                    "path": "<Keyboard>/l",
+                    "interactions": "MultiTap(tapDelay=1,tapCount=5)",
                     "processors": "",
                     "groups": "",
                     "action": "AddCoinsButtons",
@@ -198,7 +198,7 @@
                 {
                     "name": "",
                     "id": "a9ad6356-4741-4c2c-8de9-a8f2bb979bdb",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/k",
                     "interactions": "MultiTap(tapCount=5)",
                     "processors": "",
                     "groups": "",
