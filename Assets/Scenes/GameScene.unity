@@ -505,6 +505,7 @@ MonoBehaviour:
   cultistDisplacementPosition: 0.5
   cultistPrefab: {fileID: 8581349374312404868, guid: e94cc483550111046b8eb26b23ce06cf, type: 3}
   scoreScript: {fileID: 1732478435}
+  scoreLimit: 2000
   _WavePresets:
   - {fileID: 11400000, guid: ba36251ad383a5a479d48ed8b32c72a6, type: 2}
   - {fileID: 11400000, guid: c0a6ec02ae611fb4cb1b80631e177e7d, type: 2}
